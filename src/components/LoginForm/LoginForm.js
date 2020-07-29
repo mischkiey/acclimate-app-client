@@ -12,9 +12,10 @@ class LoginForm extends Component {
 
         this.setState({error: null})
 
-        const user_name = e.target.user_name.value;
-        const user_password = e.target.user_password.value;
-        const loginInputs = {user_name, user_password};
+        const loginInputs = {
+            user_name: e.target.user_name.value,
+            user_password: e.target.user_password.value,
+        };
 
         return APIService.post('/auth/login', loginInputs)
             .then(response => {
@@ -33,10 +34,14 @@ class LoginForm extends Component {
             <form onSubmit={(e) => this.handleSubmitLoginForm(e)}>
 
                 <label htmlFor="user_name">Username:</label>
-                <input id="user_name" type="text" />
+                <input id="user_name" type="text" defaultValue=
+                    {(!!window.localStorage.getItem('user_name'))
+                        ? window.localStorage.getItem('user_name')
+                        : ''}
+                />
     
                 <label htmlFor="user_password">Password:</label>
-                <input id="user_password" type="text" />
+                <input id="user_password" type="password" />
 
                 <button>Submit</button>
             </form>

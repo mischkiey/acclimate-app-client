@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import LandingPage from '../../routes/LandingPage/LandingPage';
 import LoginPage from '../../routes/LoginPage/LoginPage';
+import SignUpPage from '../../routes/SignUpPage/SignUpPage';
 import Dashboard from '../../routes/Dashboard/Dashboard';
 import SearchPage from '../../routes/SearchPage/SearchPage';
 
@@ -17,6 +18,7 @@ class App extends React.Component {
                 <main className='App'>
                     <Switch>
                         <Route path={'/loginpage'} component={LoginPage} />
+                        <Route path={'/signuppage'} component={SignUpPage} />
                         <Route path={'/dashboard'} component={Dashboard} />
                         <Route path={'/searchpage'} component={SearchPage} />
                         <Route path={'/'} component={LandingPage} />                   

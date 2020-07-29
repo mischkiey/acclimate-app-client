@@ -1,12 +1,8 @@
 import config from '../config';
 
 const TokenService = {
-    // makeAuthToken (user_name, password) {
-    //     return window.btoa(`${user_name}:${password}`);
-    // },
-
-    makeAuthToken(str) {
-        return window.btoa(str)
+    makeAuthToken (user_name, password) {
+        return window.btoa(`${user_name}:${password}`);
     },
 
     getAuthToken() {
