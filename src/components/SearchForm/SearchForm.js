@@ -27,10 +27,7 @@ class SearchForm extends Component {
     };
 
     render () {
-        const options = this.state.disasters.map(disaster => {
-            console.log(disaster)
-            return <SearchItem {...disaster} key={disaster.disaster_id} />
-        })
+        const options = this.state.disasters.map(disaster => <SearchItem {...disaster} key={disaster.disaster_id} />)
         
         return (
             <>

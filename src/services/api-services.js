@@ -44,7 +44,6 @@ const APIService = {
             }
         })
             .then(response => {
-                console.log(response)
                 if(!response.ok) {
                     return response.json().then(e => Promise.reject(e))
                 } else {
