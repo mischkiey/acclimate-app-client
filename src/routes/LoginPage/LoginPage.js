@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import LoginForm from '../../components/LoginForm/LoginForm';
 
-function LoginPage () {
-    return (
-        <>
-            <h2>Welcome back!</h2>
-            <LoginForm />
-        </>
-    );
+class LoginPage extends Component {
+    render() {
+        console.log(this.props)
+        return (
+            <>
+                <h2>Welcome back!</h2>
+                <LoginForm history={this.props.history}/>
+            </>
+        );
+    };
 };
 
 export default LoginPage;

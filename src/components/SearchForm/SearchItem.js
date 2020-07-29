@@ -1,11 +1,15 @@
 import React from 'react';
 
 function SearchItem(props) {
-    console.log(props)
     return (
         <div>
-            <h2>{props.disaster}</h2>
-            {/* <input id={props.disaster} type='image' alt={`${props.disaster}`} src={`${props.disaster.img}`}/> */}
+            <label htmlFor={props.disaster_name}>{props.disaster_name}</label>
+            <input id={props.disaster_id} type='image' alt={`${props.disaster_name}`} src={`${props.disaster_image}`}/>
+            {/* <label htmlFor={props.disaster_id}>
+                {props.disaster_name}
+                <input id={props.disaster_id} type='radio' value={props.disaster_id}/>
+                <img alt={`${props.disaster_name}`} src={`${props.disaster_image}`} />
+            </label> */}
         </div>
     );
 };

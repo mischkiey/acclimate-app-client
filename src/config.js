@@ -1,4 +1,4 @@
 export default {
-    API_ENDPOINT: '',
+    API_ENDPOINT: 'http://localhost:8000/api',
     API_TOKEN: 'acclimate-client-token',
 };
