@@ -58,8 +58,14 @@ const APIService = {
             })
     },
 
-    delete(endpoint, settings) {
-        return fetch(`${config.API_ENDPOINT}${endpoint}`, settings)
+    del(endpoint, token) {
+        return fetch(`${config.API_ENDPOINT}${endpoint}`, {
+            'method': 'DELETE',
+                'headers': {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+        })
             .then(response => {
                 if(!response.ok) {
                     response.json().then(error => Promise.reject(error))

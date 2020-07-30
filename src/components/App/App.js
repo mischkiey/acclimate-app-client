@@ -23,6 +23,7 @@ class App extends React.Component {
 
     render() {
         const value = {
+            // Triggers another render?
             log: this.state.log,
             handleUserLog: this.handleUserLog,
         };

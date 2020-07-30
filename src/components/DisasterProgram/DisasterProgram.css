@@ -8,6 +8,10 @@
     /* margin-bottom: 10px; */
 }
 
+/* button.item {
+    align-self: flex-end;
+} */
+
 @media all and (min-width: 800px) {
     .disaster-program-group {
         border: 1px dashed orange;

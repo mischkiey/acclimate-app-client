@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './DisasterProgram.css';
 
 class DisasterProgram extends Component {
-    generatePlanStepsByStage (stage) {
+    generatePlanStepsByStage(stage) {
         return this.props.disaster_plan_steps.filter(step => step.disaster_plan_step_stage.toLowerCase() === stage).map(step => <li key={step.disaster_plan_step_id}>{step.disaster_plan_step}</li>);
     };
 
@@ -10,6 +10,8 @@ class DisasterProgram extends Component {
 
         return (
             <div className='disaster-program-group'>
+                <button className='item'>Collapse/Expand</button>
+                <button className='item' onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}>Delete</button>
                 <article>
                     <h2>Disaster Program</h2>
                     <p>{this.props.disaster_program_information}</p>
