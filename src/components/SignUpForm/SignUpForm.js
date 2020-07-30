@@ -28,6 +28,7 @@ class SignUpForm extends Component {
                 this.props.history.push('/loginpage')
             })
             .catch(({error}) => {
+                console.log(error)
                 this.setState({error})
             });
     };

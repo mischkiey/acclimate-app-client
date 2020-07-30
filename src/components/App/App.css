@@ -1,19 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=IBM+Plex+Sans:wght@300;400&family=IBM+Plex+Serif:wght@300;400&family=Roboto+Slab&display=swap');
 
-/* body {
+body {
     background-image: url(../../images/white-paper-background.jpg);
     filter: saturate(1);
-} */
+}
 
+/* Reusable app/global-level CSS properties */
 .wrapper {
     width: 100%;
     margin: auto;
+    border: 1px solid #04030B
 }
 
-h1.item {
-    font-size: 32px;
+.center {
+    text-align: center;
 }
 
+.right {
+    text-align: right;
+}
+
+/* Header text default */
 h1, h2, h3 {
     color: #04030B;
     font-family: 'IBM Plex Serif', serif;
@@ -21,36 +28,35 @@ h1, h2, h3 {
     font-weight: 400;
 }
 
-.center {
-    text-align: center;
-}
-
-p, ol, ul {
+/* Text default */
+p, ol, ul, a, label, input, button {
     color: #04030B;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 16px;
     font-weight: 300;
 }
 
-a {
-    color: #04030B;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 16px;
-    font-weight: 300;
-}
-
-label, input, button {
-    color: #04030B;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 16px;
-    font-weight: 300;
-    margin-bottom: 10px;
-}
-
+/* Container/Flex properties default */
 form {
+    align-items: center;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    border: 1px dashed red;
+}
+
+.group {
+    display: flex;
+    flex-flow: column;
+}
+
+.item {
+    flex: 1;
+}
+
+/* Element default */
+
+label, input, button {
+    margin: 10px;
 }
 
 @media all and (min-width: 800px) {
@@ -58,4 +64,8 @@ form {
         width: 80%;
     }
 
-};
+    .group {
+        display: flex;
+        flex-flow: row;
+    }
+}

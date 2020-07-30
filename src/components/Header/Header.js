@@ -14,6 +14,7 @@ function Header(props) {
         ?
         (<ul>
             <li><NavLink activeClassName='' to='/searchpage'>Search Database</NavLink></li>
+            <li><NavLink activeClassName='' to='/dashboard'>Dashboard</NavLink></li>
             <li><NavLink activeClassName='' onClick={() => handleLogOutClick()} to='/'>Logout</NavLink></li>
         </ul>)
         :
@@ -25,10 +26,10 @@ function Header(props) {
     return (
         <>
             <header className='group'>
-            <Link to='/'><h1 className='item'>Acclimate</h1></Link> 
-            <nav className='group'>
-                {links}
-            </nav>
+                <Link to='/' className='item'><h1>Acclimate</h1></Link> 
+                <nav className='group item'>
+                    {links}
+                </nav>
             </header>
         </>
     );

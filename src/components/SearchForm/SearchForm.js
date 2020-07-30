@@ -16,16 +16,16 @@ class SearchForm extends Component {
 
         const token = TokenService.getAuthToken();
         const disaster_program_id = e.target.disaster.value;
-        console.log(disaster_program_id)
 
         return APIService.post('/disaster/user/program', {disaster_program_id}, token)
             .then(response => {
-                this.props.history.push('/dashboard')
+                console.log(response);
+                this.props.history.push('/dashboard');
             })
             .catch(({error}) => {
-                console.log(error)
-                this.setState({error})
-            })
+                console.log(error);
+                this.setState({error});
+            });
     };
 
     componentDidMount() {
@@ -45,7 +45,7 @@ class SearchForm extends Component {
     render () {
         const options = this.state.disasters.map(disaster =>
             (
-            <div className='item search-input-group' key={disaster.disaster_id}>
+            <div className='item search-form-input-group' key={disaster.disaster_id}>
                 <input id={disaster.disaster_id} name='disaster' type='radio' value={disaster.disaster_id}/>
                 <img alt={`${disaster.disaster_name}`} className='search-input-image' src={`${disaster.disaster_image}`} />
                 <label htmlFor={disaster.disaster_id}>{disaster.disaster_name}</label>
@@ -56,7 +56,7 @@ class SearchForm extends Component {
             <>
                 <h2>Search Form</h2>
                 <form className='' onSubmit={(e) => this.handleSearchFormSubmit(e)}>
-                    <div className='search-form-group'>
+                    <div className='search-form-inputs-group'>
                         {options}
                     </div>
                     <button>Submit</button>

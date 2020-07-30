@@ -32,7 +32,7 @@ class App extends React.Component {
                 <AcclimateContext.Provider value={value}>
                     {/* Redundant? */}
                     <Header handleUserLog={this.handleUserLog} log={this.state.log}/>
-                    <main className='App'>
+                    <main className=''>
                         <Switch>
                             <Route path={'/loginpage'} component={LoginPage} />
                             <Route path={'/signuppage'} component={SignUpPage} />

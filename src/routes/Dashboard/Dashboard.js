@@ -30,13 +30,22 @@ class Dashboard extends Component {
     render () {
         const programs = this.state.programs.map(program => <DisasterProgram key={program.disaster_program_id} {...program} />)
 
-
         return (
-            <>
-                {programs}
-                <TaskList />
-                <ShoppingList />
-            </>
+            <div className='group'> 
+                <section className='dashboard-component-group item'>
+                    {programs}
+                </section>
+
+                <section className='dashboard-component-group item'>
+                    <article className='disaster-utility-group item'>
+                        <TaskList />
+                    </article>
+
+                    <article className='disaster-utility-group item'>
+                        <ShoppingList />
+                    </article>
+                </section>
+            </div>
         );
     };
 };
