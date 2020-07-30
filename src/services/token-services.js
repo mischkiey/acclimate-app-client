@@ -19,7 +19,8 @@ const TokenService = {
     },
 
     clearAuthToken() {
-        window.localStorage.remove(config.API_TOKEN);
+        window.localStorage.removeItem(config.API_TOKEN);
+        window.localStorage.removeItem('user_name');
     },
 };
 

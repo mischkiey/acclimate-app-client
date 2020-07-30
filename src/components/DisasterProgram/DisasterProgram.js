@@ -13,7 +13,6 @@ class DisasterProgram extends Component {
 
         const recovery = this.props.disaster_plan_steps.filter(step => step.disaster_plan_step_stage === 'Recovery').map(step => step.disaster_plan_step);
 
-        console.log(this.props)
         return (
             <>
                 <h2>Disaster Program</h2>

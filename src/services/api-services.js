@@ -1,37 +1,32 @@
 import config from '../config'
 
-// For later: Refactor into async-await for practice
 const APIService = {
-   // Refactor GET
-   // Define settings here and modify function to accept a body parameter
+    post(endpoint, body, token) {
+        let settings;
+        if(token) {
+            settings = {
+                'method': 'POST',
+                'headers': {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                'body': JSON.stringify(body)
+            }
+        } else {
+            settings = {
+                'method': 'POST',
+                'headers': {
+                    'Content-Type': 'application/json'
+                },
+                'body': JSON.stringify(body)
+            }
+        }
 
-    post(endpoint, body) {
-        return fetch(`${config.API_ENDPOINT}${endpoint}`, {
-            'method': 'POST',
-            'headers': {
-                'Content-Type': 'application/json'
-            },
-            'body': JSON.stringify(body)
-        })
-            // .then(response => {
-            //     if(!response.ok) {
-            //         response.json().then(e => Promise.reject(e))
-            //     } else {
-            //         response.json()
-            //     }
-            // })
-            // .then(async response => {
-            //     if(!response.ok) {
-            //         const error = await response.json();
-            //         throw error;
-            //     };
-            //     return response.json();
-            // })
+        return fetch(`${config.API_ENDPOINT}${endpoint}`, settings)
             .then(response => {
                 if(!response.ok) {
                     return response.json().then(e => Promise.reject(e))
                 } else {
-                    console.log(response)
                     return response.json()
                 }
             })

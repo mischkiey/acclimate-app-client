@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import APIService from '../../services/api-services';
-// import TokenService from '../../services/token-services';
+import AcclimateContext from '../../contexts/AcclimateContext';
 
 class SignUpForm extends Component {
+    static contextType = AcclimateContext;
+
     state = {
         error: null,
     };
@@ -20,13 +22,12 @@ class SignUpForm extends Component {
 
         return APIService.post('/user', signUpInputs)
             .then(response => {
-                console.log('Hi')
                 window.localStorage.setItem('user_name', response.user_name)
-
+                this.context.handleUserLog();
                 this.props.history.push('/loginpage')
             })
-            .catch(error => {
-                this.setState({...error})
+            .catch(({error}) => {
+                this.setState({error})
             })
 
         

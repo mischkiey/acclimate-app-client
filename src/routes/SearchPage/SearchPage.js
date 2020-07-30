@@ -4,7 +4,7 @@ import SearchForm from '../../components/SearchForm/SearchForm';
 class SearchPage extends Component {
     render() {
         return (
-            <SearchForm />
+            <SearchForm history={this.props.history}/>
         );
     };
 };

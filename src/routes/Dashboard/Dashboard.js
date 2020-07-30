@@ -18,13 +18,13 @@ class Dashboard extends Component {
 
         return APIService.get('/disaster/user/program', token)
             .then(programs => {
-                console.log(programs, 'Moo')
                 this.setState({programs})
             })
-            .catch(error =>
-                this.setState({...error})
-            )
-    }
+            .catch(({error}) =>{
+                console.log(error, 'Dashboard Error')
+                this.setState({error})
+            })
+    };
 
     render () {
         const programs = this.state.programs.map(program => <DisasterProgram key={program.disaster_program_id} {...program} />)
