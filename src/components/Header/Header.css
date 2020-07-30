@@ -1,0 +1,41 @@
+.group {
+    display: flex;
+    flex-flow: column;
+}
+
+.item {
+    flex: 1;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav > ul {
+    list-style-type: none;
+    /* margin-inline-start: 10px; */
+    padding-inline-start: 20px;
+    text-align: center;
+}
+
+nav > ul > li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+@media all and (min-width: 800px) {
+    .group {
+        display: flex;
+        flex-flow: row;
+    }
+
+    nav.group {
+        align-self: center;
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    h1 {
+        text-align: left;
+    }
+};

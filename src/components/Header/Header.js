@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import TokenService from '../../services/token-services';
+import './Header.css';
 
 function Header(props) {
 
@@ -17,15 +18,15 @@ function Header(props) {
         </ul>)
         :
         (<ul>
-            <li><NavLink activeClassName='' to='/loginpage'>Login</NavLink></li>
-            <li><NavLink activeClassName='' to='/signuppage'>Sign up</NavLink></li>
+            <li><NavLink activeClassName='' to='/loginpage'>Log In</NavLink></li>
+            <li><NavLink activeClassName='' to='/signuppage'>Sign Up</NavLink></li>
         </ul>)
     
     return (
         <>
-            <header className=''>
-            <Link to='/'><h1 className=''>Acclimate</h1></Link> 
-            <nav>
+            <header className='group'>
+            <Link to='/'><h1 className='item'>Acclimate</h1></Link> 
+            <nav className='group'>
                 {links}
             </nav>
             </header>

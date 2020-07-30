@@ -4,6 +4,7 @@ import TokenService from '../../services/token-services';
 import DisasterProgram from '../../components/DisasterProgram/DisasterProgram';
 import TaskList from '../../components/TaskList/TaskList';
 import ShoppingList from '../../components/ShoppingList/ShoppingList';
+import './Dashboard.css';
 
 class Dashboard extends Component {
     state = {

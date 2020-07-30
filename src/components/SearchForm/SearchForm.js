@@ -6,7 +6,7 @@ import './SearchForm.css';
 class SearchForm extends Component {
     state = {
         disasters: [],
-        error: null
+        error: null,
     };
 
     handleSearchFormSubmit(e) {
@@ -16,13 +16,14 @@ class SearchForm extends Component {
 
         const token = TokenService.getAuthToken();
         const disaster_program_id = e.target.disaster.value;
+        console.log(disaster_program_id)
 
         return APIService.post('/disaster/user/program', {disaster_program_id}, token)
             .then(response => {
                 this.props.history.push('/dashboard')
             })
             .catch(({error}) => {
-                console.log(error, 'Search Form Error')
+                console.log(error)
                 this.setState({error})
             })
     };
@@ -37,7 +38,6 @@ class SearchForm extends Component {
                 this.setState({disasters: response})
             })
             .catch(({error}) => {
-                console.log(error, 'Search Form Error')
                 this.setState({error})
             })
     };
@@ -45,18 +45,20 @@ class SearchForm extends Component {
     render () {
         const options = this.state.disasters.map(disaster =>
             (
-            <div className='' key={disaster.disaster_id}>
-                <label htmlFor={disaster.disaster_id}>{disaster.disaster_name}</label>
+            <div className='item search-input-group' key={disaster.disaster_id}>
                 <input id={disaster.disaster_id} name='disaster' type='radio' value={disaster.disaster_id}/>
-                <img alt={`${disaster.disaster_name}`} src={`${disaster.disaster_image}`} />
+                <img alt={`${disaster.disaster_name}`} className='search-input-image' src={`${disaster.disaster_image}`} />
+                <label htmlFor={disaster.disaster_id}>{disaster.disaster_name}</label>
             </div>
         ))
         
         return (
             <>
                 <h2>Search Form</h2>
-                <form onSubmit={(e) => this.handleSearchFormSubmit(e)}>
-                    {options}
+                <form className='' onSubmit={(e) => this.handleSearchFormSubmit(e)}>
+                    <div className='search-form-group'>
+                        {options}
+                    </div>
                     <button>Submit</button>
                 </form>
             </>

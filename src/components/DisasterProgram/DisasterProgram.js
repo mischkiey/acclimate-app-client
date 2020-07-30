@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-// import DisasterInformation from './DisasterInformation';
-// import DisasterPlan from './DisasterPlan'
+import './DisasterProgram.css';
 
 class DisasterProgram extends Component {
-    // Todo
-    // Cleanup component
-
     render () {
-        const readiness = this.props.disaster_plan_steps.filter(step => step.disaster_plan_step_stage === 'Readiness').map(step => step.disaster_plan_step);
+        const readiness = this.props.disaster_plan_steps.filter(step => step.disaster_plan_step_stage === 'Readiness').map(step => <li>{step.disaster_plan_step}</li>);
 
-        const response = this.props.disaster_plan_steps.filter(step => step.disaster_plan_step_stage === 'Response').map(step => step.disaster_plan_step);
+        const response = this.props.disaster_plan_steps.filter(step => step.disaster_plan_step_stage === 'Response').map(step => <li>{step.disaster_plan_step}</li>);
 
-        const recovery = this.props.disaster_plan_steps.filter(step => step.disaster_plan_step_stage === 'Recovery').map(step => step.disaster_plan_step);
+        const recovery = this.props.disaster_plan_steps.filter(step => step.disaster_plan_step_stage === 'Recovery').map(step => <li>{step.disaster_plan_step}</li>);
 
         return (
             <>
@@ -33,9 +29,6 @@ class DisasterProgram extends Component {
                     {recovery}
                 </ul>
 
-
-                {/* <DisasterInformation />
-                <DisasterPlan /> */}
             </>
         );
     };

@@ -1,7 +1,37 @@
-img {
-    width: 100px;
+.search-form-group {
+    display: flex;
+    flex-flow: column;
+}
+
+.search-input-group {
+    align-items: center;
+    border: 1px dashed rgb(219, 213, 213);
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column;
+    margin: 0 0 20px 0;
+}
+
+.search-input-image {
+    height: 300px;
+    width: 100%;
 }
 
 input {
     width: 100px;
 }
+
+button {
+    margin: 10px 0;
+}
+
+
+@media all and (min-width: 800px) {
+    .search-form-group {
+        flex-flow: row wrap;
+    }
+
+    .search-input-group {
+        margin: 0 20px 0 0;
+    }
+};

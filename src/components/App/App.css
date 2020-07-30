@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=IBM+Plex+Sans:wght@300;400&family=IBM+Plex+Serif:wght@300;400&family=Roboto+Slab&display=swap');
+
+/* body {
+    background-image: url(../../images/white-paper-background.jpg);
+    filter: saturate(1);
+} */
+
+.wrapper {
+    width: 100%;
+    margin: auto;
+}
+
+h1.item {
+    font-size: 32px;
+}
+
+h1, h2, h3 {
+    color: #04030B;
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.center {
+    text-align: center;
+}
+
+p, ol, ul {
+    color: #04030B;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+a {
+    color: #04030B;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+label, input, button {
+    color: #04030B;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+@media all and (min-width: 800px) {
+    .wrapper {
+        width: 80%;
+    }
+
+};

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'; 
+import TokenService from '../../services/token-services';
 import Header from '../Header/Header';
 import LandingPage from '../../routes/LandingPage/LandingPage';
 import LoginPage from '../../routes/LoginPage/LoginPage';
@@ -7,7 +8,7 @@ import SignUpPage from '../../routes/SignUpPage/SignUpPage';
 import Dashboard from '../../routes/Dashboard/Dashboard';
 import SearchPage from '../../routes/SearchPage/SearchPage';
 import AcclimateContext from '../../contexts/AcclimateContext';
-import TokenService from '../../services/token-services';
+import './App.css';
 
 class App extends React.Component {
     state = {
@@ -15,9 +16,9 @@ class App extends React.Component {
     };
 
     handleUserLog = () => {
-        const userLog = TokenService.hasAuthToken();
-        console.log(userLog, 'User is logged in?')
-        this.setState({log: userLog});
+        const log = TokenService.hasAuthToken();
+        console.log('Is user logged in?', log);
+        this.setState({log});
     };
 
     render() {
@@ -27,8 +28,9 @@ class App extends React.Component {
         };
 
         return (
-            <>
+            <div className='wrapper'>
                 <AcclimateContext.Provider value={value}>
+                    {/* Redundant? */}
                     <Header handleUserLog={this.handleUserLog} log={this.state.log}/>
                     <main className='App'>
                         <Switch>
@@ -40,7 +42,7 @@ class App extends React.Component {
                         </Switch>
                     </main>
                 </AcclimateContext.Provider>
-            </>
+            </div>
         );
     };
 };

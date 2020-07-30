@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './TaskList.css';
 
 class TaskList extends Component {
     render () {

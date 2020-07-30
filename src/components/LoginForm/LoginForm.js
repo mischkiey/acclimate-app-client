@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import APIService from '../../services/api-services';
 import TokenService from '../../services/token-services';
 import AcclimateContext from '../../contexts/AcclimateContext';
+import './LoginForm.css';
 
 class LoginForm extends Component {
     static contextType = AcclimateContext;
@@ -13,7 +14,7 @@ class LoginForm extends Component {
     handleSubmitLoginForm = (e) => {
         e.preventDefault();
 
-        this.setState({error: null})
+        this.setState({error: null});
 
         const loginInputs = {
             user_name: e.target.user_name.value,
@@ -38,15 +39,21 @@ class LoginForm extends Component {
 
                 <label htmlFor="user_name">Username:</label>
                 <input id="user_name" type="text" defaultValue=
-                    {(!!window.localStorage.getItem('user_name'))
-                        ? window.localStorage.getItem('user_name')
-                        : ''}
+                    // Should I refactor this to TokenService?
+                    {
+                        (!!window.localStorage.getItem('user_name'))
+                            ? window.localStorage.getItem('user_name')
+                            : ''
+                    }
                 />
     
                 <label htmlFor="user_password">Password:</label>
                 <input id="user_password" type="password" />
+                
+                <div>
+                    <button>Submit</button>
+                </div>
 
-                <button>Submit</button>
             </form>
         );
     };

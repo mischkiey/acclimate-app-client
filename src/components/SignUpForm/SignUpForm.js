@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import APIService from '../../services/api-services';
 import AcclimateContext from '../../contexts/AcclimateContext';
+import './SignUpForm.css';
 
 class SignUpForm extends Component {
     static contextType = AcclimateContext;
@@ -28,10 +29,7 @@ class SignUpForm extends Component {
             })
             .catch(({error}) => {
                 this.setState({error})
-            })
-
-        
-
+            });
     };
     
     render() {
@@ -47,7 +45,10 @@ class SignUpForm extends Component {
                 <label htmlFor="user_password">Password:</label>
                 <input id="user_password" type="text" />
 
-                <button>Submit</button>
+                <div>
+                    <button>Submit</button>
+                </div>
+                
             </form>
         );
     };
