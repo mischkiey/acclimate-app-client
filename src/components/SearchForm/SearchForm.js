@@ -19,11 +19,9 @@ class SearchForm extends Component {
 
         return APIService.post('/disaster/user/program', {disaster_program_id}, token)
             .then(response => {
-                console.log(response);
                 this.props.history.push('/dashboard');
             })
             .catch(({error}) => {
-                console.log(error);
                 this.setState({error});
             });
     };

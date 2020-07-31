@@ -29,7 +29,6 @@ class LoginForm extends Component {
                 this.props.history.push('/dashboard');
             })
             .catch(({error}) => {
-                console.log(error)
                 this.setState({error});
             });
     };

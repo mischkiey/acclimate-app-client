@@ -9,32 +9,24 @@ class DisasterProgramList extends Component {
         error: null,
     };
 
-    // handleDeleteUserProgram()
     handleDeleteDisasterProgram = (disaster_program_id) => {
         this.setState({error: null})
 
         const token = TokenService.getAuthToken();
 
-        console.log('Delete', disaster_program_id, token)
-
-        return APIService.del(`/disaster/user/${disaster_program_id}`,token )
-            .then(response => {
-
-                // Response is an empty object
+        return APIService.del(`/disaster/user/program/${disaster_program_id}`,token )
+            .then((response) => {
 
                 return APIService.get('/disaster/user/program', token)
                     .then(programs => {
-                        console.log(programs)
+
                         this.setState({programs})
                     })
                     .catch(error => {
-                        console.log(error)
                         this.setState({error})
-                        // this.setState({programs: [], ...error})
                     })
             })
             .catch(error => {
-                console.log(error)
                 this.setState({...error})
             });
     };
@@ -49,7 +41,6 @@ class DisasterProgramList extends Component {
                 this.setState({programs})
             })
             .catch(({error}) =>{
-                console.log(error, 'Disaster Program List Error')
                 this.setState({error})
             });
     };

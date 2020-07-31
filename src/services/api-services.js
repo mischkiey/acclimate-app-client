@@ -48,13 +48,21 @@ const APIService = {
             })
     },
 
-    patch(endpoint, settings) {
-        return fetch(`${config.API_ENDPOINT}${endpoint}`, settings)
+    patch(endpoint, body, token) {
+        return fetch(`${config.API_ENDPOINT}${endpoint}`, {
+            'method': 'PATCH',
+            'headers': {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            'body': JSON.stringify(body)
+        })
             .then(response => {
                 if(!response.ok) {
-                    response.json().then(error => Promise.reject(error))
+                    return response.json().then(e => Promise.reject(e))
+                } else {
+                    return response.json()
                 }
-                return response.json();
             })
     },
 

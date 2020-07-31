@@ -9,12 +9,10 @@ class Dashboard extends Component {
         return (
             <div className='group'> 
                 <DisasterProgramList />
-
                 <section className='dashboard-component-group item'>
                     <article className='disaster-utility-group item'>
                         <TaskList />
                     </article>
-
                     <article className='disaster-utility-group item'>
                         <ShoppingList />
                     </article>

@@ -17,7 +17,6 @@ class App extends React.Component {
 
     handleUserLog = () => {
         const log = TokenService.hasAuthToken();
-        console.log('Is user logged in?', log);
         this.setState({log});
     };
 
@@ -30,15 +29,15 @@ class App extends React.Component {
 
         return (
             <div className='wrapper'>
+                <Header handleUserLog={this.handleUserLog} log={this.state.log}/>
                 <AcclimateContext.Provider value={value}>
                     {/* Redundant? */}
-                    <Header handleUserLog={this.handleUserLog} log={this.state.log}/>
                     <main className=''>
                         <Switch>
                             <Route path={'/loginpage'} component={LoginPage} />
                             <Route path={'/signuppage'} component={SignUpPage} />
-                            <Route path={'/dashboard'} component={Dashboard} />
                             <Route path={'/searchpage'} component={SearchPage} />
+                            <Route path={'/dashboard'} component={Dashboard} />
                             <Route path={'/'} component={LandingPage} />                   
                         </Switch>
                     </main>

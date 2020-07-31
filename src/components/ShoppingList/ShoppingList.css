@@ -1,0 +1,4 @@
+.add-shopping-item-form-group {
+    display: flex;
+    flex-flow: row;
+}
