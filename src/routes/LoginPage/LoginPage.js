@@ -6,7 +6,13 @@ class LoginPage extends Component {
     render() {
         return (
             <>
-                <h2 className='center'>Welcome back!</h2>
+                <h2 className='center'>
+                    {
+                        (!!window.localStorage.getItem('user_name'))
+                            ? `Welcome, ${window.localStorage.getItem('user_name')}!`
+                            : 'Please login to continue.'
+                    }
+                </h2>
                 <LoginForm history={this.props.history}/>
             </>
         );

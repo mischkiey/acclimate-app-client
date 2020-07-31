@@ -10,7 +10,7 @@ class DisasterProgram extends Component {
 
         return (
             <div className='disaster-program-group'>
-                <button className='item'>Collapse/Expand</button>
+                {/* <button className='item'>Collapse/Expand</button> */}
                 <button className='item' onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}>Delete</button>
                 <article>
                     <h2>Disaster Program</h2>
