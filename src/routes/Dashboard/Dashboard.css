@@ -1,9 +1,9 @@
 .group {
-    border: 1px dashed blue;
+    /* border: 1px dashed blue; */
 }
 
 .item {
-    border: 1px dashed coral;
+    /* border: 1px dashed coral; */
 }
 
 .dashboard-component-group {
