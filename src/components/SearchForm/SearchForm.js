@@ -65,7 +65,7 @@ class SearchForm extends Component {
                     <div className='search-form-inputs-group'>
                         {options}
                     </div>
-                    <button>Submit</button>
+                    <button className='y-btn'><i className="material-icons">add_circle</i></button>
                 </form>
             </>
         )

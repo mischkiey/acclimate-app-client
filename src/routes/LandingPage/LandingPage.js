@@ -4,6 +4,7 @@ import './LandingPage.css';
 function LandingPage () {
     return (
         <>
+            <i className="material-icons">face</i>
             <h2>Description:</h2>
             <p>Acclimate is an informational and utility disaster management app that aims to provide accurate, reliable, and useful information and tools to be able to handle impending disasters systematically and effectively</p>
             

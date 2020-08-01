@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=IBM+Plex+Sans:wght@300;400&family=IBM+Plex+Serif:wght@300;400&family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 /* body {
-    background-image: url(../../images/white-paper-background.jpg);
+    background-image: url(../../images/hurricane.jpg);
     filter: saturate(1);
 } */
 
@@ -22,7 +23,7 @@
 
 /* Header text default */
 h1, h2, h3 {
-    color: #04030B;
+    color: #37474f;
     font-family: 'IBM Plex Serif', serif;
     font-weight: 400;
 }
@@ -32,8 +33,9 @@ h1 {
 }
 
 /* Text default */
+
 p, ol, ul, a, label, input, button {
-    color: #04030B;
+    color: #37474f;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 16px;
     font-weight: 300;
@@ -58,11 +60,42 @@ form {
 /* Element default */
 
 .main {
+    border: 1px solid #37474f;
+    border-radius: 10px;
     padding: 10px;
 }
 
 label, input, button {
     margin: 10px;
+}
+
+.item-input {
+    width: 80%;
+}
+
+.r-link:hover {
+    color: #B00020;
+    cursor: pointer;
+}
+
+.y-link:hover {
+    color: #fdd835;
+    cursor: pointer;
+}
+
+.r-btn, .y-btn {
+    border: none;
+    background-color: white;
+}
+
+.r-btn:hover {
+    color: #B00020;
+    cursor: pointer;
+}
+
+.y-btn:hover {
+    color: #fdd835;
+    cursor: pointer;
 }
 
 .error {

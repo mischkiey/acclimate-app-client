@@ -56,7 +56,7 @@ class SignUpForm extends Component {
                     <input id="user_password" type="text" />
 
                     <div>
-                        <button>Submit</button>
+                        <button className='y-btn'>Submit<i className="material-icons">create</i></button>
                     </div>
                     
                 </form>

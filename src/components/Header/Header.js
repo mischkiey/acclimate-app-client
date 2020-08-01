@@ -13,9 +13,11 @@ function Header(props) {
     const links = (props.log || TokenService.hasAuthToken())
         ?
         (<ul>
-            <li><NavLink activeClassName='' to='/searchpage'>Search Database</NavLink></li>
-            <li><NavLink activeClassName='' to='/dashboard'>Dashboard</NavLink></li>
-            <li><NavLink activeClassName='' onClick={() => handleLogOutClick()} to='/'>Logout</NavLink></li>
+            <li><NavLink className='y-link' to='/searchpage'>Search Database</NavLink></li>
+            {/* <li><NavLink className='y-link' to='/searchpage'><i className="material-icons">search</i>Search Database</NavLink></li> */}
+            <li><NavLink activeClassName='y-link' to='/dashboard'>Dashboard</NavLink></li>
+            {/* <li><NavLink activeClassName='y-link' to='/dashboard'><i className="material-icons">dashboard</i>Dashboard</NavLink></li> */}
+            <li><NavLink activeClassName='r-link' onClick={() => handleLogOutClick()} to='/'><i className="material-icons">power_settings_new</i></NavLink></li>
         </ul>)
         :
         (<ul>

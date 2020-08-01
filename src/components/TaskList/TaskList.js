@@ -93,9 +93,9 @@ class TaskList extends Component {
         return (
             <>
                 <h2 className='center'>Task List</h2>
-                <form className='add-task-form-group' onSubmit={(e) => this.handleAddTask(e)} >
-                    <input name='add_user_task' placeholder='Enter task' type='text' />
-                    <button>Add Task</button>
+                <form className='list-group' onSubmit={(e) => this.handleAddTask(e)} >
+                    <input className='item-input' name='add_user_task' placeholder='Enter task' type='text' />
+                    <button className='y-btn'><i className="material-icons">add_circle</i></button>
                 </form>
                 {tasks}
             </>

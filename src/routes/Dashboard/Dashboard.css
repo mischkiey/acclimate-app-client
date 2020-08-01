@@ -8,6 +8,7 @@
 
 .dashboard-component-group {
     /* border: 1px dashed violet; */
+    /* border-radius: 10px; */
     display: flex;
     flex-flow: column;
     padding: 6px 6px 3px 6px;
@@ -15,7 +16,8 @@
 }
 
 .disaster-utility-group {
-    border: 1px dashed orange;
+    border: 1px dashed #37474f;
+    border-radius: 10px;
     display: flex;
     flex-flow: column;
     padding: 3px;
@@ -34,7 +36,7 @@
     }
     
     .disaster-utility-group {
-        border: 1px dashed orange;
+        border: 1px dashed #37474f;
         display: flex;
         flex-flow: column;
         padding: 5px;

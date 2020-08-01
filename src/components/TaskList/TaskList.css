@@ -1,4 +1,7 @@
-.add-task-form-group {
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.list-group {
     display: flex;
     flex-flow: row;
+    justify-content: center;
 }

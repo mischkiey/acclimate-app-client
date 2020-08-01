@@ -59,7 +59,7 @@ class LoginForm extends Component {
                 <input id="user_password" type="password" />
                 
                 <div>
-                    <button>Submit</button>
+                    <button className='y-btn'><i className="material-icons">vpn_key</i></button>
                 </div>
 
             </form>
