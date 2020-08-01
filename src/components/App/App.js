@@ -57,7 +57,6 @@ class App extends React.Component {
                                     />
                             }}>
                             </Route>
-
                             <Route path={'/'} component={LandingPage} />                   
                         </Switch>
                     </main>

@@ -30,10 +30,9 @@ class SearchForm extends Component {
         this.setState({error: null});
 
         const token = TokenService.getAuthToken();
-        console.log('3')
+
         return APIService.get('/disaster', token)
             .then(response => {
-                console.log('4')
                 this.setState({disasters: response})
             })
             .catch(({error}) => {
@@ -42,12 +41,10 @@ class SearchForm extends Component {
     };
 
     componentWillUnmount() {
-        console.log('Unmounted')
         this.setState({disasters: []})
     }
 
     render () {
-        console.log('0')
         const options = this.state.disasters.map(disaster =>
             (
             <div className='item search-form-input-group' key={disaster.disaster_id}>

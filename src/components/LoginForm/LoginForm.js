@@ -14,7 +14,7 @@ class LoginForm extends Component {
     handleSubmitLoginForm = (e) => {
         e.preventDefault();
 
-        // this.setState({error: null});
+        this.setState({error: null});
 
         const loginInputs = {
             user_name: e.target.user_name.value,
@@ -27,11 +27,9 @@ class LoginForm extends Component {
                 TokenService.saveAuthToken(token);
                 this.context.handleUserLog();
 
-                if (this.props.location.state.from) {
-                    console.log('1')
+                if (this.props.location.state.from)
                     return this.props.history.push(this.props.location.state.from);
-                }
-                console.log('2')
+                
                 this.props.history.push('/dashboard');
             })
             .catch(({error}) => {
@@ -40,7 +38,6 @@ class LoginForm extends Component {
     };
     
     render() {
-        console.log('Render LoginForm')
         return (
             <form onSubmit={(e) => this.handleSubmitLoginForm(e)}>
                 {
@@ -54,7 +51,6 @@ class LoginForm extends Component {
                 
                 <label htmlFor="user_name">Username:</label>
                 <input id="user_name" type="text" defaultValue=
-                    // Should I refactor this to TokenService?
                     {
                         (!!window.localStorage.getItem('user_name'))
                             ? window.localStorage.getItem('user_name')
