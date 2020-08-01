@@ -46,7 +46,7 @@ class DisasterProgramList extends Component {
     };
 
     render () {
-        const programs = this.state.programs.map(program => <DisasterProgram key={program.disaster_program_id} {...program} handleDeleteDisasterProgram={this.handleDeleteDisasterProgram}/>)
+        const programs = this.state.programs.map(program => <DisasterProgram key={program.disaster_program_id} {...program} handleDeleteDisasterProgram={this.handleDeleteDisasterProgram} />)
 
         return (
             <section className='dashboard-component-group item'>

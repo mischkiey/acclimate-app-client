@@ -41,7 +41,7 @@ class SignUpForm extends Component {
                         (this.state.error)
                             ? 
                                 <div className='error'>
-                                    <p className='error'>{this.state.error}</p>
+                                    <p className='error'><i className="material-icons">error</i> {this.state.error}!</p>
                                 </div>
                             : ''
                     }
@@ -56,7 +56,7 @@ class SignUpForm extends Component {
                     <input id="user_password" type="text" />
 
                     <div>
-                        <button className='y-btn'>Submit<i className="material-icons">create</i></button>
+                        <button className='y-btn'><i className="material-icons">create</i></button>
                     </div>
                     
                 </form>

@@ -103,6 +103,9 @@ label, input, button {
     text-align: left;
 }
 
+/* .material-icons {
+} */
+
 @media all and (min-width: 800px) {
     .wrapper {
         width: 80%;

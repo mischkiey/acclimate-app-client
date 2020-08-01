@@ -4,7 +4,6 @@ import TokenService from '../../services/token-services';
 import './Header.css';
 
 function Header(props) {
-
     const handleLogOutClick = () => {
         TokenService.clearAuthToken();
         props.handleUserLog()
@@ -13,10 +12,10 @@ function Header(props) {
     const links = (props.log || TokenService.hasAuthToken())
         ?
         (<ul>
-            <li><NavLink className='y-link' to='/searchpage'>Search Database</NavLink></li>
-            {/* <li><NavLink className='y-link' to='/searchpage'><i className="material-icons">search</i>Search Database</NavLink></li> */}
-            <li><NavLink activeClassName='y-link' to='/dashboard'>Dashboard</NavLink></li>
-            {/* <li><NavLink activeClassName='y-link' to='/dashboard'><i className="material-icons">dashboard</i>Dashboard</NavLink></li> */}
+            {/* <li><NavLink className='y-link' to='/searchpage'>Search Database</NavLink></li> */}
+            <li><NavLink className='y-link' to='/searchpage'><i className="material-icons">search</i></NavLink></li>
+            {/* <li><NavLink className='y-link' to='/dashboard'>Dashboard</NavLink></li> */}
+            <li><NavLink activeClassName='y-link' to='/dashboard'><i className="material-icons">dashboard</i></NavLink></li>
             <li><NavLink activeClassName='r-link' onClick={() => handleLogOutClick()} to='/'><i className="material-icons">power_settings_new</i></NavLink></li>
         </ul>)
         :

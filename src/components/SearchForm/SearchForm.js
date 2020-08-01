@@ -58,7 +58,7 @@ class SearchForm extends Component {
                         (this.state.error)
                             ? 
                                 <div className='error'>
-                                    <p className='error'>{this.state.error}</p>
+                                    <p className='error'>{this.state.error}!</p>
                                 </div>
                             : ''
                     }
