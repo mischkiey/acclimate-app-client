@@ -13,7 +13,8 @@ class LoginPage extends Component {
                             : 'Please login to continue.'
                     }
                 </h2>
-                <LoginForm history={this.props.history}/>
+                {/* <LoginForm history={this.props.history}/> */}
+                <LoginForm {...this.props} />
             </>
         );
     };

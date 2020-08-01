@@ -14,7 +14,7 @@ class LoginForm extends Component {
     handleSubmitLoginForm = (e) => {
         e.preventDefault();
 
-        this.setState({error: null});
+        // this.setState({error: null});
 
         const loginInputs = {
             user_name: e.target.user_name.value,
@@ -26,6 +26,12 @@ class LoginForm extends Component {
                 const token = response.authToken;
                 TokenService.saveAuthToken(token);
                 this.context.handleUserLog();
+
+                if (this.props.location.state.from) {
+                    console.log('1')
+                    return this.props.history.push(this.props.location.state.from);
+                }
+                console.log('2')
                 this.props.history.push('/dashboard');
             })
             .catch(({error}) => {
@@ -34,6 +40,7 @@ class LoginForm extends Component {
     };
     
     render() {
+        console.log('Render LoginForm')
         return (
             <form onSubmit={(e) => this.handleSubmitLoginForm(e)}>
                 {

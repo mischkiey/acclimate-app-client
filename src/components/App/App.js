@@ -34,22 +34,29 @@ class App extends React.Component {
                     <main className='main'>
                         <Switch>
                             <Route path={'/loginpage'} component={LoginPage} />
-                        
-                            <Route path={'/signuppage'} component={SignUpPage}>
-                                {this.state.log ?
-                                    <Redirect
+                            <Route path={'/signuppage'} component={SignUpPage} />
+                            <Route path={'/searchpage'} render={({location}) => {
+                                return (this.state.log || TokenService.hasAuthToken())
+                                    ? <SearchPage />
+                                    : <Redirect
                                         to={{
-                                        pathname: '/loginpage',
-                                        // state: {referrer: currentLocation}
+                                            pathname: '/loginpage',
+                                            state: { from: location }
                                         }}
                                     />
-                                    : <SignUpPage />
-                                }
+                            }}>
                             </Route>
-
-                            <Route path={'/searchpage'} component={SearchPage} />
-
-                            <Route path={'/dashboard'} component={Dashboard} />
+                            <Route path={'/dashboard'} render={({location}) => {
+                                return (this.state.log || TokenService.hasAuthToken())
+                                    ? <Dashboard />
+                                    : <Redirect
+                                        to={{
+                                            pathname: '/loginpage',
+                                            state: { from: location }
+                                        }}
+                                    />
+                            }}>
+                            </Route>
 
                             <Route path={'/'} component={LandingPage} />                   
                         </Switch>
