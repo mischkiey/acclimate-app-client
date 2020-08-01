@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DisasterProgram Component Snapshot test Renders the UI as expected 1`] = `
+<div
+  className="disaster-program-group"
+>
+  <button
+    className="item y-btn"
+    onClick={[Function]}
+  >
+    <i
+      className="material-icons"
+    >
+      unfold_more
+    </i>
+  </button>
+  <article>
+    <h2
+      className="center"
+    >
+      Disaster Program
+    </h2>
+    <p>
+      About the blizzard disaster program
+      : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </article>
+  <button
+    className="item r-btn"
+    onClick={[Function]}
+  >
+    <i
+      className="material-icons"
+    >
+      delete
+    </i>
+  </button>
+</div>
+`;

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm Component Snapshot test Renders the UI as expected 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  
+  <label
+    htmlFor="user_name"
+  >
+    Username:
+  </label>
+  <input
+    defaultValue=""
+    id="user_name"
+    type="text"
+  />
+  <label
+    htmlFor="user_password"
+  >
+    Password:
+  </label>
+  <input
+    id="user_password"
+    type="password"
+  />
+  <div>
+    <button
+      className="y-btn"
+    >
+      <i
+        className="material-icons"
+      >
+        vpn_key
+      </i>
+    </button>
+  </div>
+</form>
+`;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskItem Component Snapshot test Renders the UI as expected 1`] = `
+<div
+  className="list-group"
+>
+  <input
+    className="item-input"
+    defaultValue="Bring pets inside"
+    onChange={[Function]}
+    type="text"
+  />
+  <button
+    className="r-btn"
+    onClick={[Function]}
+  >
+    <i
+      className="material-icons"
+    >
+      delete
+    </i>
+  </button>
+</div>
+`;

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component Snapshot test Renders the UI as expected 1`] = `
+<header
+  className="group"
+>
+  <a
+    className="item"
+    href="/"
+    onClick={[Function]}
+  >
+    <h1>
+      Acclimate.
+    </h1>
+  </a>
+  <nav
+    className="group item"
+  >
+    <ul>
+      <li>
+        <a
+          aria-current={null}
+          href="/loginpage"
+          onClick={[Function]}
+        >
+          Log In
+        </a>
+      </li>
+      <li>
+        <a
+          aria-current={null}
+          href="/signuppage"
+          onClick={[Function]}
+        >
+          Sign Up
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+`;

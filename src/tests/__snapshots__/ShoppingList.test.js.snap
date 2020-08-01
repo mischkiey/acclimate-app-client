@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShoppingList Component Snapshot test Renders the UI as expected 1`] = `
+Array [
+  <h2
+    className="center"
+  >
+    Shopping List
+  </h2>,
+  <form
+    className="list-group"
+    onSubmit={[Function]}
+  >
+    <input
+      className="item-input"
+      name="add_user_shopping_item"
+      placeholder="Enter shopping item"
+      type="text"
+    />
+    <button
+      className="y-btn"
+    >
+      <i
+        className="material-icons"
+      >
+        add_circle
+      </i>
+    </button>
+  </form>,
+]
+`;

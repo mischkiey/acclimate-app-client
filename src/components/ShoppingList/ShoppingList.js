@@ -88,7 +88,7 @@ class ShoppingList extends Component {
     };
 
     render () {
-        const items = this.state.items.map(shopping => <ShoppingItem key={shopping.user_shopping_item_id} handleDeleteShoppingItem={this.handleDeleteShoppingItem} handleEditShoppingItem={this.handleEditShoppingItem} {...shopping} />)
+        const items = this.state.items.map(item => <ShoppingItem key={item.user_shopping_item_id} handleDeleteShoppingItem={this.handleDeleteShoppingItem} handleEditShoppingItem={this.handleEditShoppingItem} {...item} />)
 
         return (
             <>

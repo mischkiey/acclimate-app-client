@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component Snapshot test Renders the UI as expected 1`] = `
+<div
+  className="wrapper"
+>
+  <header
+    className="group"
+  >
+    <a
+      className="item"
+      href="/"
+      onClick={[Function]}
+    >
+      <h1>
+        Acclimate.
+      </h1>
+    </a>
+    <nav
+      className="group item"
+    >
+      <ul>
+        <li>
+          <a
+            aria-current={null}
+            href="/loginpage"
+            onClick={[Function]}
+          >
+            Log In
+          </a>
+        </li>
+        <li>
+          <a
+            aria-current={null}
+            href="/signuppage"
+            onClick={[Function]}
+          >
+            Sign Up
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main
+    className="main"
+  >
+    <i
+      className="material-icons"
+    >
+      face
+    </i>
+    <h2>
+      Description:
+    </h2>
+    <p>
+      Acclimate is an informational and utility disaster management app that aims to provide accurate, reliable, and useful information and tools to be able to handle impending disasters systematically and effectively
+    </p>
+    <h2>
+      How It Works:
+    </h2>
+    <ol>
+      <li>
+        The app will provide users with general information on a selected disaster
+      </li>
+      <li>
+        The app will generate a disaster management plan (based on user-selection) that has steps for before, during, and after the event
+      </li>
+      <li>
+        The app will also generate a task list that incorporates the above plan
+      </li>
+      <li>
+         The app will also generate a shopping list with recommended supplies
+      </li>
+      <li>
+         Users can personalize the task and shopping lists to tailorfit their current circumstances/needs
+      </li>
+    </ol>
+  </main>
+</div>
+`;
