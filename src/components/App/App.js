@@ -31,13 +31,26 @@ class App extends React.Component {
             <div className='wrapper'>
                 <Header handleUserLog={this.handleUserLog} log={this.state.log}/>
                 <AcclimateContext.Provider value={value}>
-                    {/* Redundant? */}
                     <main className='main'>
                         <Switch>
                             <Route path={'/loginpage'} component={LoginPage} />
-                            <Route path={'/signuppage'} component={SignUpPage} />
+                        
+                            <Route path={'/signuppage'} component={SignUpPage}>
+                                {this.state.log ?
+                                    <Redirect
+                                        to={{
+                                        pathname: '/loginpage',
+                                        // state: {referrer: currentLocation}
+                                        }}
+                                    />
+                                    : <SignUpPage />
+                                }
+                            </Route>
+
                             <Route path={'/searchpage'} component={SearchPage} />
+
                             <Route path={'/dashboard'} component={Dashboard} />
+
                             <Route path={'/'} component={LandingPage} />                   
                         </Switch>
                     </main>
