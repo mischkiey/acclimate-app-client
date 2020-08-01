@@ -1,5 +1,5 @@
 .search-form-inputs-group {
-    border: 1px dashed green;
+    /* border: 1px dashed green; */
     display: flex;
     flex-flow: column;
     margin-bottom: 10px;

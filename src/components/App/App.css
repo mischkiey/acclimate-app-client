@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=IBM+Plex+Sans:wght@300;400&family=IBM+Plex+Serif:wght@300;400&family=Roboto+Slab&display=swap');
 
-body {
+/* body {
     background-image: url(../../images/white-paper-background.jpg);
     filter: saturate(1);
-}
+} */
 
 /* Reusable app/global-level CSS properties */
 .wrapper {
@@ -24,8 +24,11 @@ body {
 h1, h2, h3 {
     color: #04030B;
     font-family: 'IBM Plex Serif', serif;
-    font-size: 24px;
     font-weight: 400;
+}
+
+h1 {
+    font-size: 30px;
 }
 
 /* Text default */
@@ -41,7 +44,6 @@ form {
     align-items: center;
     display: flex;
     flex-flow: column;
-    /* border: 1px dashed red; */
 }
 
 .group {
@@ -55,8 +57,17 @@ form {
 
 /* Element default */
 
+.main {
+    padding: 10px;
+}
+
 label, input, button {
     margin: 10px;
+}
+
+.error {
+    color: #B00020;
+    text-align: left;
 }
 
 @media all and (min-width: 800px) {
@@ -67,5 +78,10 @@ label, input, button {
     .group {
         display: flex;
         flex-flow: row;
+    }
+
+    .main {
+        border: 1px solid #37474f;
+        border-radius: 10px;
     }
 }

@@ -7,7 +7,7 @@
 }
 
 .dashboard-component-group {
-    border: 1px dashed violet;
+    /* border: 1px dashed violet; */
     display: flex;
     flex-flow: column;
     padding: 6px 6px 3px 6px;
@@ -26,7 +26,7 @@
 
 @media all and (min-width: 800px) {
     .dashboard-component-group {
-        border: 1px dashed violet;
+        /* border: 1px dashed violet; */
         display: flex;
         flex-flow: column;
         padding: 10px 10px 5px 10px;

@@ -36,7 +36,15 @@ class LoginForm extends Component {
     render() {
         return (
             <form onSubmit={(e) => this.handleSubmitLoginForm(e)}>
-
+                {
+                    (this.state.error)
+                        ? 
+                            <div className='error'>
+                                <p className='error'>{this.state.error}</p>
+                            </div>
+                        : ''
+                }
+                
                 <label htmlFor="user_name">Username:</label>
                 <input id="user_name" type="text" defaultValue=
                     // Should I refactor this to TokenService?
@@ -46,7 +54,7 @@ class LoginForm extends Component {
                             : ''
                     }
                 />
-    
+
                 <label htmlFor="user_password">Password:</label>
                 <input id="user_password" type="password" />
                 

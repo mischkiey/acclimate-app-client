@@ -92,7 +92,7 @@ class ShoppingList extends Component {
 
         return (
             <>
-                <h2>Shopping List</h2>
+                <h2 className='center'>Shopping List</h2>
                 <form className='add-shopping-item-form-group' onSubmit={(e) => this.handleAddShoppingItem(e)} >
                     <input name='add_user_shopping_item' placeholder='Enter shopping item' type='text' />
                     <button>Add Shopping Item</button>

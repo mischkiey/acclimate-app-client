@@ -11,9 +11,8 @@ class DisasterProgram extends Component {
         return (
             <div className='disaster-program-group'>
                 {/* <button className='item'>Collapse/Expand</button> */}
-                <button className='item' onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}>Delete</button>
                 <article>
-                    <h2>Disaster Program</h2>
+                    <h2 className='center'>Disaster Program</h2>
                     <p>{this.props.disaster_program_information}</p>
                 </article>
                 
@@ -33,6 +32,7 @@ class DisasterProgram extends Component {
                         {this.generatePlanStepsByStage('recovery')}
                     </ul>
                 </article>
+                <button className='item' onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}>Delete</button>
             </div>
         );
     };

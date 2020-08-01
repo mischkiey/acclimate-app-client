@@ -92,7 +92,7 @@ class TaskList extends Component {
 
         return (
             <>
-                <h2>Task List</h2>
+                <h2 className='center'>Task List</h2>
                 <form className='add-task-form-group' onSubmit={(e) => this.handleAddTask(e)} >
                     <input name='add_user_task' placeholder='Enter task' type='text' />
                     <button>Add Task</button>

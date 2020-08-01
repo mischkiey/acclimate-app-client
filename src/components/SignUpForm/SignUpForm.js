@@ -34,22 +34,33 @@ class SignUpForm extends Component {
     
     render() {
         return (
-            <form onSubmit={(e) => this.handleSubmitSignUpForm(e)}>
+            <>
+                <form onSubmit={(e) => this.handleSubmitSignUpForm(e)}>
+                    
+                    {
+                        (this.state.error)
+                            ? 
+                                <div className='error'>
+                                    <p className='error'>{this.state.error}</p>
+                                </div>
+                            : ''
+                    }
 
-                <label htmlFor="user_full_name">Full Name:</label>
-                <input id="user_full_name" type="text" />
+                    <label htmlFor="user_full_name">Full Name:</label>
+                    <input id="user_full_name" type="text" />
 
-                <label htmlFor="user_name">Username:</label>
-                <input id="user_name" type="text" />
-    
-                <label htmlFor="user_password">Password:</label>
-                <input id="user_password" type="text" />
+                    <label htmlFor="user_name">Username:</label>
+                    <input id="user_name" type="text" />
+        
+                    <label htmlFor="user_password">Password:</label>
+                    <input id="user_password" type="text" />
 
-                <div>
-                    <button>Submit</button>
-                </div>
-                
-            </form>
+                    <div>
+                        <button>Submit</button>
+                    </div>
+                    
+                </form>
+            </>
         );
     };
 };

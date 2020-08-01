@@ -52,8 +52,16 @@ class SearchForm extends Component {
         
         return (
             <>
-                <h2>Search Form</h2>
+                <h2 className='center'>Select a Disaster Program</h2>
                 <form className='' onSubmit={(e) => this.handleSearchFormSubmit(e)}>
+                    {
+                        (this.state.error)
+                            ? 
+                                <div className='error'>
+                                    <p className='error'>{this.state.error}</p>
+                                </div>
+                            : ''
+                    }
                     <div className='search-form-inputs-group'>
                         {options}
                     </div>

@@ -26,7 +26,7 @@ function Header(props) {
     return (
         <>
             <header className='group'>
-                <Link to='/' className='item'><h1>Acclimate</h1></Link> 
+                <Link to='/' className='item'><h1>Acclimate.</h1></Link> 
                 <nav className='group item'>
                     {links}
                 </nav>
