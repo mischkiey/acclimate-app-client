@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom'; 
+import { Redirect, Route, Switch } from 'react-router-dom'; 
 import TokenService from '../../services/token-services';
 import Header from '../Header/Header';
 import LandingPage from '../../routes/LandingPage/LandingPage';
