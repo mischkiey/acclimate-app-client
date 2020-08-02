@@ -10,6 +10,40 @@ class DisasterProgramList extends Component {
         error: null,
     };
 
+    handleAddToTaskList = (disaster_plan_step_itemable_shorthand) => {
+        this.setState({error: null})
+
+        const newUserTask = {
+            user_task: disaster_plan_step_itemable_shorthand,
+        };
+        const token = TokenService.getAuthToken();
+
+        return APIService.post('/disaster/user/task', newUserTask, token)
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                this.setState({...error});
+            });
+    };
+
+    handleAddToShoppingList = (disaster_plan_step_itemable_shorthand) => {
+        this.setState({error: null})
+
+        const newUserShoppingItem = {
+            user_shopping_item: disaster_plan_step_itemable_shorthand,
+        };
+        const token = TokenService.getAuthToken();
+
+        return APIService.post('/disaster/user/shopping', newUserShoppingItem, token)
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                this.setState({...error});
+            });
+    };
+
     handleDeleteDisasterProgram = (disaster_program_id) => {
         this.setState({error: null})
 
@@ -47,7 +81,7 @@ class DisasterProgramList extends Component {
     };
 
     render () {
-        const programs = this.state.programs.map(program => <DisasterProgram key={program.disaster_program_id} {...program} handleDeleteDisasterProgram={this.handleDeleteDisasterProgram} />)
+        const programs = this.state.programs.map(program => <DisasterProgram key={program.disaster_program_id} {...program} handleAddToTaskList={this.handleAddToTaskList} handleAddToShoppingList={this.handleAddToShoppingList} handleDeleteDisasterProgram={this.handleDeleteDisasterProgram} />)
 
         return (
             <section className='dashboard-component-group item'>

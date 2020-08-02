@@ -7,8 +7,22 @@ class DisasterProgram extends Component {
     }
 
     renderPlanStepsByStage = (stage) => {
-        return this.props.disaster_plan_steps.filter(step => step.disaster_plan_step_stage.toLowerCase() === stage).map(step => <li key={step.disaster_plan_step_id}>{step.disaster_plan_step}</li>);
-    };
+        return this.props.disaster_plan_steps.filter(step => step.disaster_plan_step_stage.toLowerCase() === stage).map(step => {
+
+            if (step.disaster_plan_step_itemable_type === 'Task') {
+                return (
+                    <li key={step.disaster_plan_step_id}>{step.disaster_plan_step}<button className='item y-btn' onClick={() => this.props.handleAddToTaskList(step.disaster_plan_step_itemable_shorthand)}><i className="material-icons">add_task</i></button></li>
+                )
+            } else if (step.disaster_plan_step_itemable_type === 'Shopping Item') {
+                return (
+                    <li key={step.disaster_plan_step_id}>{step.disaster_plan_step}<button className='item y-btn' onClick={() => this.props.handleAddToShoppingList(step.disaster_plan_step_itemable_shorthand)}><i className="material-icons">add_shopping_cart</i></button></li>
+                )
+            } else {
+                return (
+                    <li key={step.disaster_plan_step_id}>{step.disaster_plan_step}</li>
+                )
+            }
+    })};
 
     handleToggleDisasterProgram = () => {
         this.setState({expand: !this.state.expand});
@@ -39,7 +53,6 @@ class DisasterProgram extends Component {
                         {this.renderPlanStepsByStage('recovery')}
                     </ul>
                 </article>
-                {/* <button className='item y-btn' onClick={() => this.props.handlePopulateLists(this.props.disaster_program_id)}><i className="material-icons">add_task</i></button> */}
                 <button className='item r-btn' onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}><i className="material-icons">delete</i></button>
             </div>
         );
