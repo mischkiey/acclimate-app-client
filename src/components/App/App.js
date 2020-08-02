@@ -7,36 +7,22 @@ import LoginPage from '../../routes/LoginPage/LoginPage';
 import SignUpPage from '../../routes/SignUpPage/SignUpPage';
 import Dashboard from '../../routes/Dashboard/Dashboard';
 import SearchPage from '../../routes/SearchPage/SearchPage';
-// import AcclimateContext from '../../contexts/AcclimateContext';
+import { ExperimentalContext } from '../../contexts/ExperimentalContext';
 import './App.css';
 
 class App extends React.Component {
-    state = {
-        log: false
-    };
-
-    handleUserLog = () => {
-        const log = TokenService.hasAuthToken();
-        this.setState({log});
-    };
+    static contextType = ExperimentalContext;
 
     render() {
-        // const value = {
-        //     // Triggers another render?
-        //     log: this.state.log,
-        //     handleUserLog: this.handleUserLog,
-        // };
-
         return (
             <div className='wrapper'>
-                <Header handleUserLog={this.handleUserLog} log={this.state.log}/>
-                {/* <AcclimateContext.Provider value={value}> */}
+                <Header handleUserLog={this.context.handleUserLog} log={this.context.log}/>
                     <main className='main'>
                         <Switch>
                             <Route path={'/loginpage'} component={LoginPage} />
                             <Route path={'/signuppage'} component={SignUpPage} />
                             <Route path={'/searchpage'} render={({...props}) => {
-                                return (this.state.log || TokenService.hasAuthToken())
+                                return (this.context.log || TokenService.hasAuthToken())
                                     ? <SearchPage {...props} />
                                     : <Redirect
                                         to={{
@@ -47,7 +33,7 @@ class App extends React.Component {
                             }}>
                             </Route>
                             <Route path={'/dashboard'} render={({...props}) => {
-                                return (this.state.log || TokenService.hasAuthToken())
+                                return (this.context.log || TokenService.hasAuthToken())
                                     ? <Dashboard {...props} />
                                     : <Redirect
                                         to={{
@@ -60,7 +46,6 @@ class App extends React.Component {
                             <Route path={'/'} component={LandingPage} />                   
                         </Switch>
                     </main>
-                {/* </AcclimateContext.Provider> */}
             </div>
         );
     };

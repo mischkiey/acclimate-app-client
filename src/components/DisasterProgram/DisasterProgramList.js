@@ -2,9 +2,12 @@ import React, {Component} from 'react';
 import DisasterProgram from '../../components/DisasterProgram/DisasterProgram';
 import APIService from '../../services/api-services';
 import TokenService from '../../services/token-services';
+import { ExperimentalContext } from '../../contexts/ExperimentalContext';
 import './DisasterProgram.css'
 
 class DisasterProgramList extends Component {
+    static contextType = ExperimentalContext;
+
     state = {
         programs: [],
         error: null,
@@ -20,7 +23,9 @@ class DisasterProgramList extends Component {
 
         return APIService.post('/disaster/user/task', newUserTask, token)
             .then(response => {
-                console.log(response);
+                this.context.tasks.push(response);
+                const newTasks = this.context.tasks;
+                this.context.setTasks(newTasks);
             })
             .catch(error => {
                 this.setState({...error});
@@ -37,7 +42,9 @@ class DisasterProgramList extends Component {
 
         return APIService.post('/disaster/user/shopping', newUserShoppingItem, token)
             .then(response => {
-                console.log(response);
+                this.context.shoppingItems.push(response);
+                const newShoppingItems = this.context.shoppingItems;
+                this.context.setShoppingItems(newShoppingItems);
             })
             .catch(error => {
                 this.setState({...error});

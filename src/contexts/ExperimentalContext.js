@@ -6,7 +6,8 @@ export const ExperimentalContext = React.createContext({});
 export class ExperimentalProvider extends Component {
     state = {
         log: false,
-        message: 'This is a message from up above'
+        tasks: [],
+        shoppingItems: [],
     };
 
     handleUserLog = () => {
@@ -14,10 +15,23 @@ export class ExperimentalProvider extends Component {
         this.setState({log});
     };
 
+    setTasks = (tasks) => {
+        this.setState({tasks})
+    };
+
+    setShoppingItems = (shoppingItems) => {
+        this.setState({shoppingItems})
+    };
+
     render() {
         const value = {
-            message: this.state.message,
+            log: this.state.log,
+            tasks: this.state.tasks,
+            shoppingItems: this.state.shoppingItems,
+
             handleUserLog: this.handleUserLog,
+            setTasks: this.setTasks,
+            setShoppingItems: this.setShoppingItems,
         };
 
         return (
