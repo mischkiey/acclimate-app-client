@@ -27,11 +27,7 @@ class LoginForm extends Component {
                 const token = response.authToken;
                 TokenService.saveAuthToken(token);
                 this.context.handleUserLog();
-                
-                if (this.props.location.state !== null) {
-                    return this.props.history.push(this.props.location.state.from)
-                }
-                    this.props.history.push('/dashboard');
+                this.props.history.push('/dashboard');
             })
             .catch(({error}) => {
                 this.setState({error});
@@ -39,7 +35,6 @@ class LoginForm extends Component {
     };
     
     render() {
-        console.log(config.API_ENDPOINT)
         return (
             <form onSubmit={(e) => this.handleSubmitLoginForm(e)}>
                 {
