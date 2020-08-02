@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import APIService from '../../services/api-services';
 import TokenService from '../../services/token-services';
+import { ExperimentalContext } from '../../contexts/ExperimentalContext';
+
 import ShoppingItem from './ShoppingItem';
 import './ShoppingList.css';
 
 class ShoppingList extends Component {
+    static contextType = ExperimentalContext;
+
     state = {
-        items: [],
-        newUserShoppingItem: {},
         error: null,
     };
     
@@ -24,9 +26,9 @@ class ShoppingList extends Component {
 
         return APIService.post('/disaster/user/shopping', newUserShoppingItem, token)
             .then(response => {
-                this.state.items.push(response);
-                const newShoppingItems = this.state.items;
-                this.setState({shoppings: newShoppingItems});
+                this.context.shoppingItems.push(response);
+                const newShoppingItems = this.context.shoppingItems;
+                this.context.setShoppingItems(newShoppingItems);
                 user_shopping_item.value = '';
             })
             .catch(error => {
@@ -45,7 +47,7 @@ class ShoppingList extends Component {
 
         return APIService.patch(`/disaster/user/shopping/${user_shopping_item_id}`, newUserShoppingItem, token)
             .then(() => {
-                const newUserShoppingItems = this.state.items.filter(shopping => shopping.user_shopping_item_id !== newUserShoppingItem.user_shopping_item_id);
+                const newUserShoppingItems = this.context.shoppingItems.filter(shoppingItem => shoppingItem.user_shopping_item_id !== newUserShoppingItem.user_shopping_item_id);
                 newUserShoppingItem.user_id = user_id;
                 newUserShoppingItems.push(newUserShoppingItem);
                 newUserShoppingItems.sort((a, b) => {
@@ -55,7 +57,7 @@ class ShoppingList extends Component {
                         return 1;
                     };
                 });
-                this.setState({items: newUserShoppingItems})
+                this.context.setShoppingItems(newUserShoppingItems)
             })
             .catch(error => {
                 this.setState({...error});
@@ -68,8 +70,8 @@ class ShoppingList extends Component {
         const token = TokenService.getAuthToken();
         return APIService.del(`/disaster/user/shopping/${user_shopping_item_id}`, token)
             .then(response => {
-                const newUserShoppingItems = this.state.items.filter(shopping => shopping.user_shopping_item_id !== user_shopping_item_id);
-                this.setState({items: newUserShoppingItems});
+                const newUserShoppingItems = this.context.shoppingItems.filter(shoppingItem => shoppingItem.user_shopping_item_id !== user_shopping_item_id);
+                this.context.setShoppingItems(newUserShoppingItems);
             })
             .catch(error => {
                 this.setState({error: null})
@@ -79,8 +81,8 @@ class ShoppingList extends Component {
     componentDidMount() {
         const token = TokenService.getAuthToken();
         return APIService.get('/disaster/user/shopping', token)
-            .then(items => {
-                this.setState({items});
+            .then(shoppingItems => {
+                this.context.setShoppingItems(shoppingItems)
             })
             .catch(error => {
                 this.setState({...error});
@@ -88,16 +90,31 @@ class ShoppingList extends Component {
     };
 
     render () {
-        const items = this.state.items.map(item => <ShoppingItem key={item.user_shopping_item_id} handleDeleteShoppingItem={this.handleDeleteShoppingItem} handleEditShoppingItem={this.handleEditShoppingItem} {...item} />)
+        const shoppingItems = this.context.shoppingItems.map(shoppingItem => 
+            <ShoppingItem
+                key={shoppingItem.user_shopping_item_id}
+                handleDeleteShoppingItem={this.handleDeleteShoppingItem}
+                handleEditShoppingItem={this.handleEditShoppingItem}
+                {...shoppingItem}
+            />
+        )
 
         return (
             <>
                 <h2 className='center'>Shopping List</h2>
-                <form className='list-group' onSubmit={(e) => this.handleAddShoppingItem(e)} >
-                    <input className='item-input' name='add_user_shopping_item' placeholder='Enter shopping item' type='text' />
+                <form
+                    className='list-group'
+                    onSubmit={(e) => this.handleAddShoppingItem(e)}
+                >
+                    <input 
+                        className='item-input'
+                        name='add_user_shopping_item'
+                        placeholder='Enter shopping item'
+                        type='text'
+                    />
                     <button className='y-btn'><i className="material-icons">add_circle</i></button>
                 </form>
-                {items}
+                {shoppingItems}
             </>
         );
     };

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import APIService from '../../services/api-services';
-import AcclimateContext from '../../contexts/AcclimateContext';
+// import AcclimateContext from '../../contexts/AcclimateContext';
+import { ExperimentalContext } from '../../contexts/ExperimentalContext'
 import './SignUpForm.css';
 
 class SignUpForm extends Component {
-    static contextType = AcclimateContext;
+    static contextType = ExperimentalContext;
 
     state = {
         error: null,
@@ -47,16 +48,27 @@ class SignUpForm extends Component {
                     }
 
                     <label htmlFor="user_full_name">Full Name:</label>
-                    <input id="user_full_name" type="text" />
+                    <input
+                        id="user_full_name"
+                        type="text"
+                    />
 
                     <label htmlFor="user_name">Username:</label>
-                    <input id="user_name" type="text" />
+                    <input
+                        id="user_name"
+                        type="text" 
+                    />
         
                     <label htmlFor="user_password">Password:</label>
-                    <input id="user_password" type="text" />
+                    <input
+                        id="user_password"
+                        type="text"
+                    />
 
                     <div>
-                        <button className='y-btn'><i className="material-icons">create</i></button>
+                        <button className='y-btn'>
+                            <i className="material-icons">create</i>
+                        </button>
                     </div>
                     
                 </form>

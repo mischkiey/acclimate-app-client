@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import APIService from '../../services/api-services';
 import TokenService from '../../services/token-services';
 import TaskItem from './TaskItem';
+import { ExperimentalContext } from '../../contexts/ExperimentalContext';
 import './TaskList.css';
 
 class TaskList extends Component {
+    static contextType = ExperimentalContext;
+
     state = {
-        tasks: [],
-        newUserTask: {},
         error: null,
     };
     
@@ -24,9 +25,9 @@ class TaskList extends Component {
 
         return APIService.post('/disaster/user/task', newUserTask, token)
             .then(response => {
-                this.state.tasks.push(response);
-                const newTasks = this.state.tasks;
-                this.setState({tasks: newTasks});
+                this.context.tasks.push(response);
+                const newTasks = this.context.tasks;
+                this.context.setTasks(newTasks)
                 user_task.value = '';
             })
             .catch(error => {
@@ -44,8 +45,8 @@ class TaskList extends Component {
         const token = TokenService.getAuthToken();
 
         return APIService.patch(`/disaster/user/task/${user_task_id}`, newUserTask, token)
-            .then(response => {
-                const newUserTasks = this.state.tasks.filter(task => task.user_task_id !== newUserTask.user_task_id);
+            .then(() => {
+                const newUserTasks = this.context.tasks.filter(task => task.user_task_id !== newUserTask.user_task_id);
                 newUserTask.user_id = user_id;
                 newUserTasks.push(newUserTask);
                 newUserTasks.sort((a, b) => {
@@ -55,7 +56,7 @@ class TaskList extends Component {
                         return 1;
                     };
                 });
-                this.setState({tasks: newUserTasks})
+                this.context.setTasks(newUserTasks)
             })
             .catch(error => {
                 this.setState({...error});
@@ -67,12 +68,12 @@ class TaskList extends Component {
 
         const token = TokenService.getAuthToken();
         return APIService.del(`/disaster/user/task/${user_task_id}`, token)
-            .then(response => {
-                const newUserTasks = this.state.tasks.filter(task => task.user_task_id !== user_task_id);
-                this.setState({tasks: newUserTasks});
+            .then(() => {
+                const newUserTasks = this.context.tasks.filter(task => task.user_task_id !== user_task_id);
+                this.context.setTasks(newUserTasks)
             })
             .catch(error => {
-                this.setState({error: null})
+                this.setState({...error})
             })
     }
 
@@ -80,7 +81,7 @@ class TaskList extends Component {
         const token = TokenService.getAuthToken();
         return APIService.get('/disaster/user/task', token)
             .then(tasks => {
-                this.setState({tasks});
+                this.context.setTasks(tasks);
             })
             .catch(error => {
                 this.setState({...error});
@@ -88,7 +89,7 @@ class TaskList extends Component {
     };
 
     render () {
-        const tasks = this.state.tasks.map(task => <TaskItem key={task.user_task_id} handleDeleteTask={this.handleDeleteTask} handleEditTask={this.handleEditTask} {...task} />)
+        const tasks = this.context.tasks.map(task => <TaskItem key={task.user_task_id} handleDeleteTask={this.handleDeleteTask} handleEditTask={this.handleEditTask} {...task} />)
 
         return (
             <>
