@@ -6,7 +6,7 @@ exports[`DisasterProgram Component Snapshot test Renders the UI as expected 1`] 
 >
   <article>
     <button
-      className="item y-btn"
+      className="item tooltip y-btn"
       onClick={[Function]}
     >
       <i
@@ -14,6 +14,11 @@ exports[`DisasterProgram Component Snapshot test Renders the UI as expected 1`] 
       >
         unfold_more
       </i>
+      <span
+        className="tooltiptext"
+      >
+        More
+      </span>
     </button>
     <button
       className="item r-btn"

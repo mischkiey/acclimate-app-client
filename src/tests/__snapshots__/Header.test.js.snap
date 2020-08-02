@@ -17,7 +17,9 @@ exports[`Header Component Snapshot test Renders the UI as expected 1`] = `
     className="group item"
   >
     <ul>
-      <li>
+      <li
+        className="tooltip"
+      >
         <a
           className=""
           href="/loginpage"

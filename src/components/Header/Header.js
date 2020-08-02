@@ -11,35 +11,55 @@ function Header() {
                 const links = (value.log || TokenService.hasAuthToken())
                     ? (
                         <ul>
-                            <li>
+                            <li className='tooltip'>
+                                <Link
+                                    className='y-link'
+                                    to='/helppage'
+                                >
+                                    <i className="material-icons">help_outline</i>
+                                </Link>
+                                <span className='tooltiptext'>
+                                    Hints?
+                                </span>
+                            </li>
+                            <li className='tooltip'>
                                 <Link
                                     className='y-link'
                                     to='/searchpage'
                                 >
                                     <i className="material-icons">search</i>
                                 </Link>
+                                <span className='long tooltiptext'>
+                                    Search database for disaster programs
+                                </span>
                             </li>
-                            <li>
+                            <li className='tooltip'>
                                 <Link
                                     className='y-link'
                                     to='/dashboard'
                                 >
                                     <i className="material-icons">dashboard</i>
                                 </Link>
+                                <span className='short tooltiptext'>
+                                    Dashboard
+                                </span>
                             </li>
-                            <li>
+                            <li className='tooltip' >
                                 <Link
                                     className='r-link'
                                     onClick={() => value.handleUserLogOut()} to='/'
                                 >
                                     <i className="material-icons">power_settings_new</i>
                                 </Link>
+                                <span className='long tooltiptext'>
+                                    Stay safe out there! :)
+                                </span>
                             </li>
                         </ul>
                     )
                     :
                     (<ul>
-                        <li>
+                        <li className='tooltip'>
                             <Link
                                 className=''
                                 to='/loginpage'

@@ -112,7 +112,12 @@ class ShoppingList extends Component {
                         placeholder='Enter shopping item'
                         type='text'
                     />
-                    <button className='y-btn'><i className="material-icons">add_circle</i></button>
+                    <button className='tooltip y-btn'>
+                        <i className="material-icons">add_circle</i>
+                        <span className='long tooltiptext'>
+                            Click to add item to your shopping list
+                        </span>
+                    </button>
                 </form>
                 {shoppingItems}
             </>

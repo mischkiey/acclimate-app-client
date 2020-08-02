@@ -19,10 +19,13 @@ class DisasterProgram extends Component {
                         <li key={step.disaster_plan_step_id}>
                             {step.disaster_plan_step}
                             <button 
-                                className='item y-btn'
+                                className='item tooltip y-btn'
                                 onClick={() => this.props.handleAddToTaskList(step.disaster_plan_step_itemable_shorthand)}
                             >
                                 <i className="material-icons">add_task</i>
+                                <span className='long tooltiptext'>
+                                    Click to add this step to your task list
+                                </span>
                             </button>
                         </li>
                     )
@@ -31,10 +34,13 @@ class DisasterProgram extends Component {
                         <li key={step.disaster_plan_step_id}>
                             {step.disaster_plan_step}
                             <button
-                                className='item y-btn'
+                                className='item tooltip y-btn'
                                 onClick={() => this.props.handleAddToShoppingList(step.disaster_plan_step_itemable_shorthand)}
                             >
                                 <i className="material-icons">add_shopping_cart</i>
+                                <span className='long tooltiptext'>
+                                    Click to add this item to your shopping list
+                                </span>
                             </button>
                         </li>
                     )
@@ -53,10 +59,13 @@ class DisasterProgram extends Component {
                 
                 <article>
                     <button
-                        className='item r-btn'
+                        className='item r-btn tooltip'
                         onClick={() => this.handleToggleDisasterProgram()}
                     >
                         <i className="material-icons">unfold_less</i>
+                        <span className='tooltiptext'>
+                            Less
+                        </span>
                     </button>
                     <button
                         className='item r-btn'
@@ -95,10 +104,13 @@ class DisasterProgram extends Component {
             <div className='disaster-program-group'>
                 <article>
                     <button 
-                        className='item y-btn'
+                        className='item tooltip y-btn'
                         onClick={() => this.handleToggleDisasterProgram()}
                     >
                         <i className="material-icons">unfold_more</i>
+                        <span className='tooltiptext'>
+                            More
+                        </span>
                     </button>
                     <button
                         className='item r-btn'

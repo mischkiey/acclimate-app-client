@@ -111,8 +111,11 @@ class TaskList extends Component {
                         placeholder='Enter task'
                         type='text'
                     />
-                    <button className='y-btn'>
+                    <button className='tooltip y-btn'>
                         <i className="material-icons">add_circle</i>
+                        <span className='long tooltiptext'>
+                            Click to add to your task list
+                        </span>
                     </button>
                 </form>
                 {tasks}

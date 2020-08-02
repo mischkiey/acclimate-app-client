@@ -42,6 +42,10 @@ p, ol, ul, a, label, input, button {
     font-weight: 300;
 }
 
+input {
+    font-size: 14px;
+}
+
 /* Container/Flex properties default */
 form {
     align-items: center;
@@ -104,8 +108,22 @@ label, input, button {
     text-align: left;
 }
 
-/* .material-icons {
-} */
+.tooltip .tooltiptext {
+    background-color:  #37474f;
+    border-radius: 5px;
+    padding: 5px;
+
+    color: #FFF;
+    font-size: 12px;
+    text-align: center;
+    
+    bottom: 60%;
+    left: 50%;
+    position: absolute;
+    z-index: 1;
+
+    visibility: hidden;    
+}
 
 @media all and (min-width: 800px) {
     .wrapper {
@@ -120,5 +138,39 @@ label, input, button {
     .main {
         border: 1px solid #37474f;
         border-radius: 10px;
+    }
+
+    /* Tooltip default */
+
+    .tooltip {
+        /* display: inline-block; */
+        position: relative;
+    }
+    
+    /* .tooltip .tooltiptext {
+        background-color:  #37474f;
+        border-radius: 5px;
+        padding: 5px;
+    
+        color: #FFF;
+        font-size: 12px;
+        text-align: center;
+        
+        bottom: 60%;
+        left: 50%;
+        position: absolute;
+        z-index: 1;
+    
+        visibility: hidden;    
+    } */
+    
+    .tooltip .long.tooltiptext {
+        text-align: left;
+        width: 150px;
+    }
+    
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 0.8;
     }
 }

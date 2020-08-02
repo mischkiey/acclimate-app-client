@@ -18,7 +18,9 @@ Array [
       className="group item"
     >
       <ul>
-        <li>
+        <li
+          className="tooltip"
+        >
           <a
             className=""
             href="/loginpage"
