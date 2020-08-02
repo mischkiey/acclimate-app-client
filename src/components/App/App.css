@@ -9,7 +9,7 @@ body {
 
 /* Reusable app/global-level CSS properties */
 .wrapper {
-    width: 100%;
+    /* width: 95%; */
     margin: auto;
     /* border: 1px solid #04030B */
 }

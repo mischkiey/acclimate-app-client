@@ -52,7 +52,7 @@ function Header() {
                                     <i className="material-icons">power_settings_new</i>
                                 </Link>
                                 <span className='long tooltiptext'>
-                                    Stay safe out there! :)
+                                    Stay safe out there!
                                 </span>
                             </li>
                         </ul>
@@ -79,7 +79,12 @@ function Header() {
 
                 return (
                     <header className='group wrapper'>
-                        <Link to='/' className='item'><h1>Acclimate.</h1></Link> 
+                        <Link 
+                            to='/'
+                            className='item'
+                        >
+                            <h1>Acclimate.</h1>
+                        </Link> 
                         <nav className='group item'>
                             {links}
                         </nav>

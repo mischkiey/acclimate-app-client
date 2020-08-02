@@ -75,7 +75,7 @@ class DisasterProgram extends Component {
                     </button>
                     <h2 className='center'>Disaster Program</h2>
                     <p>
-                        {this.props.disaster_program_information}: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        {this.props.disaster_program_information}
                     </p>
                 </article>
                 
@@ -120,7 +120,7 @@ class DisasterProgram extends Component {
                     </button>
                     <h2 className='center'>Disaster Program</h2>
                     <p>
-                        {this.props.disaster_program_information}: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        {this.props.disaster_program_information}
                     </p>
                 </article>
             </div>

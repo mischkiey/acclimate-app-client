@@ -1,4 +1,5 @@
 import React from 'react';
+// import { Link } from 'react-router-dom';
 import './LandingPage.css';
 
 function LandingPage () {
@@ -13,7 +14,7 @@ function LandingPage () {
             <h2>How It Works:</h2>
             <ol>
                 <li>
-                    The app will provide users with general information on a selected disaster
+                    The app provides users with general information on a selected disaster
                 </li>
                 <li>
                     The app will generate a disaster management plan (based on user-selection) that has steps for before, during, and after the event
@@ -28,6 +29,12 @@ function LandingPage () {
                     Users can personalize the task and shopping lists to tailorfit their current circumstances/needs
                 </li>
             </ol>
+
+            {/* <p>
+                <Link>
+                    Any complaints, feedback, questions? Feel free to send me a message!
+                </Link>
+            </p> */}
         </>
     );
 };
