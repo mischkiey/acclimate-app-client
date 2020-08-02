@@ -16,8 +16,9 @@
 }
 
 .disaster-utility-group {
-    border: 1px dashed #37474f;
+    /* border: 1px dashed #37474f; */
     border-radius: 10px;
+    box-shadow: 3px 3px 7px #B6B6B6;
     display: flex;
     flex-flow: column;
     padding: 5px;
@@ -36,7 +37,7 @@
     }
     
     .disaster-utility-group {
-        border: 1px dashed #37474f;
+        /* border: 1px dashed #37474f; */
         display: flex;
         flex-flow: column;
         padding: 5px;

@@ -65,8 +65,9 @@ form {
 /* Element default */
 
 .main {
-    border: 1px solid #37474f;
+    /* border: 1px solid #37474f; */
     border-radius: 10px;
+    box-shadow: 1px 1px 3px #B6B6B6;
     padding: 10px;
 }
 
@@ -125,6 +126,15 @@ label, input, button {
     visibility: hidden;    
 }
 
+.disaster-program-group {
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px #B6B6B6;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    margin: 3px;
+}
+
 @media all and (min-width: 800px) {
     .wrapper {
         width: 80%;
@@ -136,7 +146,7 @@ label, input, button {
     }
 
     .main {
-        border: 1px solid #37474f;
+        /* border: 1px solid #37474f; */
         border-radius: 10px;
     }
 
@@ -172,5 +182,12 @@ label, input, button {
     .tooltip:hover .tooltiptext {
         visibility: visible;
         opacity: 0.8;
+    }
+
+    .disaster-program-group {
+        display: flex;
+        flex-flow: column;
+        padding: 5px;
+        margin: 5px;
     }
 }
