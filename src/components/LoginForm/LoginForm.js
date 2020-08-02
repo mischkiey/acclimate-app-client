@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import APIService from '../../services/api-services';
 import TokenService from '../../services/token-services';
-import AcclimateContext from '../../contexts/AcclimateContext';
+// import AcclimateContext from '../../contexts/AcclimateContext';
+import { ExperimentalContext } from '../../contexts/ExperimentalContext'
 import './LoginForm.css';
-import config from '../../config';
 
 class LoginForm extends Component {
-    static contextType = AcclimateContext;
+    static contextType = ExperimentalContext;
 
     state = {
         error: null,
@@ -27,11 +27,7 @@ class LoginForm extends Component {
                 const token = response.authToken;
                 TokenService.saveAuthToken(token);
                 this.context.handleUserLog();
-                
-                if (this.props.location.state !== null) {
-                    return this.props.history.push(this.props.location.state.from)
-                }
-                    this.props.history.push('/dashboard');
+                this.props.history.push('/dashboard');
             })
             .catch(({error}) => {
                 this.setState({error});
@@ -39,7 +35,6 @@ class LoginForm extends Component {
     };
     
     render() {
-        console.log(config.API_ENDPOINT)
         return (
             <form onSubmit={(e) => this.handleSubmitLoginForm(e)}>
                 {

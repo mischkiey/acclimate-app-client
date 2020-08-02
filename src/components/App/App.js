@@ -7,7 +7,7 @@ import LoginPage from '../../routes/LoginPage/LoginPage';
 import SignUpPage from '../../routes/SignUpPage/SignUpPage';
 import Dashboard from '../../routes/Dashboard/Dashboard';
 import SearchPage from '../../routes/SearchPage/SearchPage';
-import AcclimateContext from '../../contexts/AcclimateContext';
+// import AcclimateContext from '../../contexts/AcclimateContext';
 import './App.css';
 
 class App extends React.Component {
@@ -21,16 +21,16 @@ class App extends React.Component {
     };
 
     render() {
-        const value = {
-            // Triggers another render?
-            log: this.state.log,
-            handleUserLog: this.handleUserLog,
-        };
+        // const value = {
+        //     // Triggers another render?
+        //     log: this.state.log,
+        //     handleUserLog: this.handleUserLog,
+        // };
 
         return (
             <div className='wrapper'>
                 <Header handleUserLog={this.handleUserLog} log={this.state.log}/>
-                <AcclimateContext.Provider value={value}>
+                {/* <AcclimateContext.Provider value={value}> */}
                     <main className='main'>
                         <Switch>
                             <Route path={'/loginpage'} component={LoginPage} />
@@ -60,7 +60,7 @@ class App extends React.Component {
                             <Route path={'/'} component={LandingPage} />                   
                         </Switch>
                     </main>
-                </AcclimateContext.Provider>
+                {/* </AcclimateContext.Provider> */}
             </div>
         );
     };
