@@ -39,7 +39,7 @@ class DisasterProgram extends Component {
                         {this.renderPlanStepsByStage('recovery')}
                     </ul>
                 </article>
-                <button className='item y-btn' onClick={() => this.props.handlePopulateLists(this.props.disaster_program_id)}><i className="material-icons">add_task</i></button>
+                {/* <button className='item y-btn' onClick={() => this.props.handlePopulateLists(this.props.disaster_program_id)}><i className="material-icons">add_task</i></button> */}
                 <button className='item r-btn' onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}><i className="material-icons">delete</i></button>
             </div>
         );
