@@ -2,7 +2,7 @@
 
 exports[`Header Component Snapshot test Renders the UI as expected 1`] = `
 <header
-  className="group"
+  className="group wrapper"
 >
   <a
     className="item"
@@ -19,7 +19,7 @@ exports[`Header Component Snapshot test Renders the UI as expected 1`] = `
     <ul>
       <li>
         <a
-          aria-current={null}
+          className=""
           href="/loginpage"
           onClick={[Function]}
         >
@@ -28,7 +28,7 @@ exports[`Header Component Snapshot test Renders the UI as expected 1`] = `
       </li>
       <li>
         <a
-          aria-current={null}
+          className=""
           href="/signuppage"
           onClick={[Function]}
         >

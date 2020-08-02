@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { BrowserRouter, Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+
 import TaskItem from '../components/TaskList/TaskItem';
 
 describe(`TaskItem Component`, () => {
@@ -13,7 +14,7 @@ describe(`TaskItem Component`, () => {
         it(`Renders without crashing`, () => {
             const div = document.createElement('div');
             ReactDOM.render(
-                <BrowserRouter>    
+                <BrowserRouter>   
                     <TaskItem {...item} />
                 </BrowserRouter>
                 , div);

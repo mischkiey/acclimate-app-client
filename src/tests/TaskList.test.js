@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { BrowserRouter, Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { ExperimentalProvider } from '../contexts/ExperimentalContext';
+
 import TaskList from '../components/TaskList/TaskList';
 
 describe(`TaskList Component`, () => {
@@ -9,8 +11,10 @@ describe(`TaskList Component`, () => {
         it(`Renders without crashing`, () => {
             const div = document.createElement('div');
             ReactDOM.render(
-                <BrowserRouter>    
-                    <TaskList />
+                <BrowserRouter>  
+                    <ExperimentalProvider>
+                        <TaskList />
+                    </ExperimentalProvider>  
                 </BrowserRouter>
                 , div);
             ReactDOM.unmountComponentAtNode(div);
@@ -21,8 +25,10 @@ describe(`TaskList Component`, () => {
         it(`Renders the UI as expected`, () => {
             const tree = renderer
                 .create(
-                    <BrowserRouter>
-                        <TaskList />
+                    <BrowserRouter>  
+                        <ExperimentalProvider>
+                            <TaskList />
+                        </ExperimentalProvider>  
                     </BrowserRouter>
                 )
                 .toJSON()

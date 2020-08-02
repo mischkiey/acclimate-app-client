@@ -56,7 +56,7 @@ class TaskList extends Component {
                         return 1;
                     };
                 });
-                this.context.setTasks(newUserTasks)
+                this.context.setTasks(newUserTasks);
             })
             .catch(error => {
                 this.setState({...error});
@@ -70,12 +70,12 @@ class TaskList extends Component {
         return APIService.del(`/disaster/user/task/${user_task_id}`, token)
             .then(() => {
                 const newUserTasks = this.context.tasks.filter(task => task.user_task_id !== user_task_id);
-                this.context.setTasks(newUserTasks)
+                this.context.setTasks(newUserTasks);
             })
             .catch(error => {
-                this.setState({...error})
-            })
-    }
+                this.setState({...error});
+            });
+    };
 
     componentDidMount() {
         const token = TokenService.getAuthToken();
@@ -89,14 +89,31 @@ class TaskList extends Component {
     };
 
     render () {
-        const tasks = this.context.tasks.map(task => <TaskItem key={task.user_task_id} handleDeleteTask={this.handleDeleteTask} handleEditTask={this.handleEditTask} {...task} />)
+        const tasks = this.context.tasks.map(task =>
+            <TaskItem
+                key={task.user_task_id}
+                handleDeleteTask={this.handleDeleteTask}
+                handleEditTask={this.handleEditTask}
+                {...task}
+            />
+        )
 
         return (
             <>
                 <h2 className='center'>Task List</h2>
-                <form className='list-group' onSubmit={(e) => this.handleAddTask(e)} >
-                    <input className='item-input' name='add_user_task' placeholder='Enter task' type='text' />
-                    <button className='y-btn'><i className="material-icons">add_circle</i></button>
+                <form
+                    className='list-group'
+                    onSubmit={(e) => this.handleAddTask(e)}
+                >
+                    <input
+                        className='item-input'
+                        name='add_user_task'
+                        placeholder='Enter task'
+                        type='text'
+                    />
+                    <button className='y-btn'>
+                        <i className="material-icons">add_circle</i>
+                    </button>
                 </form>
                 {tasks}
             </>

@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App Component Snapshot test Renders the UI as expected 1`] = `
-<div
-  className="wrapper"
->
+Array [
   <header
-    className="group"
+    className="group wrapper"
   >
     <a
       className="item"
@@ -22,7 +20,7 @@ exports[`App Component Snapshot test Renders the UI as expected 1`] = `
       <ul>
         <li>
           <a
-            aria-current={null}
+            className=""
             href="/loginpage"
             onClick={[Function]}
           >
@@ -31,7 +29,7 @@ exports[`App Component Snapshot test Renders the UI as expected 1`] = `
         </li>
         <li>
           <a
-            aria-current={null}
+            className=""
             href="/signuppage"
             onClick={[Function]}
           >
@@ -40,9 +38,9 @@ exports[`App Component Snapshot test Renders the UI as expected 1`] = `
         </li>
       </ul>
     </nav>
-  </header>
+  </header>,
   <main
-    className="main"
+    className="main wrapper"
   >
     <i
       className="material-icons"
@@ -69,12 +67,12 @@ exports[`App Component Snapshot test Renders the UI as expected 1`] = `
         The app will also generate a task list that incorporates the above plan
       </li>
       <li>
-         The app will also generate a shopping list with recommended supplies
+        The app will also generate a shopping list with recommended supplies
       </li>
       <li>
-         Users can personalize the task and shopping lists to tailorfit their current circumstances/needs
+        Users can personalize the task and shopping lists to tailorfit their current circumstances/needs
       </li>
     </ol>
-  </main>
-</div>
+  </main>,
+]
 `;
