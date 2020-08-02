@@ -45,7 +45,7 @@ class TaskList extends Component {
         const token = TokenService.getAuthToken();
 
         return APIService.patch(`/disaster/user/task/${user_task_id}`, newUserTask, token)
-            .then(response => {
+            .then(() => {
                 const newUserTasks = this.context.tasks.filter(task => task.user_task_id !== newUserTask.user_task_id);
                 newUserTask.user_id = user_id;
                 newUserTasks.push(newUserTask);
@@ -68,12 +68,12 @@ class TaskList extends Component {
 
         const token = TokenService.getAuthToken();
         return APIService.del(`/disaster/user/task/${user_task_id}`, token)
-            .then(response => {
+            .then(() => {
                 const newUserTasks = this.context.tasks.filter(task => task.user_task_id !== user_task_id);
                 this.context.setTasks(newUserTasks)
             })
             .catch(error => {
-                this.setState({error: null})
+                this.setState({...error})
             })
     }
 

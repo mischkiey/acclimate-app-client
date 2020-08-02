@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import DisasterProgram from '../../components/DisasterProgram/DisasterProgram';
 import APIService from '../../services/api-services';
 import TokenService from '../../services/token-services';
 import { ExperimentalContext } from '../../contexts/ExperimentalContext';
+
+import DisasterProgram from '../../components/DisasterProgram/DisasterProgram';
 import './DisasterProgram.css'
 
 class DisasterProgramList extends Component {
@@ -56,12 +57,10 @@ class DisasterProgramList extends Component {
 
         const token = TokenService.getAuthToken();
 
-        return APIService.del(`/disaster/user/program/${disaster_program_id}`,token )
-            .then((response) => {
-
+        return APIService.del(`/disaster/user/program/${disaster_program_id}`, token)
+            .then(() => {
                 return APIService.get('/disaster/user/program', token)
                     .then(programs => {
-
                         this.setState({programs})
                     })
                     .catch(error => {
@@ -88,7 +87,15 @@ class DisasterProgramList extends Component {
     };
 
     render () {
-        const programs = this.state.programs.map(program => <DisasterProgram key={program.disaster_program_id} {...program} handleAddToTaskList={this.handleAddToTaskList} handleAddToShoppingList={this.handleAddToShoppingList} handleDeleteDisasterProgram={this.handleDeleteDisasterProgram} />)
+        const programs = this.state.programs.map(program =>
+            <DisasterProgram
+                key={program.disaster_program_id}
+                handleAddToTaskList={this.handleAddToTaskList}
+                handleAddToShoppingList={this.handleAddToShoppingList}
+                handleDeleteDisasterProgram={this.handleDeleteDisasterProgram}
+                {...program}
+            />
+        )
 
         return (
             <section className='dashboard-component-group item'>

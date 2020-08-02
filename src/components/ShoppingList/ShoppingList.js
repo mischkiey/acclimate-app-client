@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import APIService from '../../services/api-services';
 import TokenService from '../../services/token-services';
-import ShoppingItem from './ShoppingItem';
 import { ExperimentalContext } from '../../contexts/ExperimentalContext';
+
+import ShoppingItem from './ShoppingItem';
 import './ShoppingList.css';
 
 class ShoppingList extends Component {
@@ -89,13 +90,28 @@ class ShoppingList extends Component {
     };
 
     render () {
-        const shoppingItems = this.context.shoppingItems.map(shoppingItem => <ShoppingItem key={shoppingItem.user_shopping_item_id} handleDeleteShoppingItem={this.handleDeleteShoppingItem} handleEditShoppingItem={this.handleEditShoppingItem} {...shoppingItem} />)
+        const shoppingItems = this.context.shoppingItems.map(shoppingItem => 
+            <ShoppingItem
+                key={shoppingItem.user_shopping_item_id}
+                handleDeleteShoppingItem={this.handleDeleteShoppingItem}
+                handleEditShoppingItem={this.handleEditShoppingItem}
+                {...shoppingItem}
+            />
+        )
 
         return (
             <>
                 <h2 className='center'>Shopping List</h2>
-                <form className='list-group' onSubmit={(e) => this.handleAddShoppingItem(e)} >
-                    <input className='item-input' name='add_user_shopping_item' placeholder='Enter shopping item' type='text' />
+                <form
+                    className='list-group'
+                    onSubmit={(e) => this.handleAddShoppingItem(e)}
+                >
+                    <input 
+                        className='item-input'
+                        name='add_user_shopping_item'
+                        placeholder='Enter shopping item'
+                        type='text'
+                    />
                     <button className='y-btn'><i className="material-icons">add_circle</i></button>
                 </form>
                 {shoppingItems}

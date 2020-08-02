@@ -15,6 +15,11 @@ export class ExperimentalProvider extends Component {
         this.setState({log});
     };
 
+    handleUserLogOut = () => {
+        TokenService.clearAuthToken();
+        this.handleUserLog();
+    };
+
     setTasks = (tasks) => {
         this.setState({tasks})
     };
@@ -30,6 +35,7 @@ export class ExperimentalProvider extends Component {
             shoppingItems: this.state.shoppingItems,
 
             handleUserLog: this.handleUserLog,
+            handleUserLogOut: this.handleUserLogOut,
             setTasks: this.setTasks,
             setShoppingItems: this.setShoppingItems,
         };

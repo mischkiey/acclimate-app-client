@@ -19,7 +19,7 @@ class SearchForm extends Component {
         const disaster_program_id = e.target.disaster.value;
 
         return APIService.post('/disaster/user/program', {disaster_program_id}, token)
-            .then(response => {
+            .then(() => {
                 this.props.history.push('/dashboard');
             })
             .catch(({error}) => {
@@ -38,27 +38,45 @@ class SearchForm extends Component {
             })
             .catch(({error}) => {
                 this.setState({error})
-            })
+            });
     };
 
     componentWillUnmount() {
-        this.setState({disasters: []})
-    }
+        this.setState({disasters: []});
+    };
 
     render () {
         const options = this.state.disasters.map(disaster =>
             (
-            <div className='item search-form-input-group' key={disaster.disaster_id}>
-                <input id={disaster.disaster_id} name='disaster' type='radio' value={disaster.disaster_id}/>
-                <img alt={`${disaster.disaster_name}`} className='search-input-image' src={`${disaster.disaster_image}`} />
-                <label htmlFor={disaster.disaster_id}>{disaster.disaster_name}</label>
-            </div>
-        ))
+                <div 
+                    className='item search-form-input-group'
+                    key={disaster.disaster_id}
+                >
+                        <input
+                            id={disaster.disaster_id}
+                            name='disaster'
+                            type='radio'
+                            value={disaster.disaster_id}
+                        />
+                        <img
+                            alt={`${disaster.disaster_name}`}
+                            className='search-input-image'
+                            src={`${disaster.disaster_image}`}
+                        />
+                        <label htmlFor={disaster.disaster_id}>
+                            {disaster.disaster_name}
+                        </label>
+                </div>
+            )
+        );
         
         return (
             <>
                 <h2 className='center'>Select a Disaster Program</h2>
-                <form className='' onSubmit={(e) => this.handleSearchFormSubmit(e)}>
+                <form
+                    className=''
+                    onSubmit={(e) => this.handleSearchFormSubmit(e)}
+                >
                     {
                         (this.state.error)
                             ? 
@@ -70,7 +88,9 @@ class SearchForm extends Component {
                     <div className='search-form-inputs-group'>
                         {options}
                     </div>
-                    <button className='y-btn'><i className="material-icons">add_circle</i></button>
+                    <button className='y-btn'>
+                        <i className="material-icons">add_circle</i>
+                    </button>
                 </form>
             </>
         )
