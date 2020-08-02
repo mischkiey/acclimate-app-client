@@ -35,24 +35,24 @@ class App extends React.Component {
                         <Switch>
                             <Route path={'/loginpage'} component={LoginPage} />
                             <Route path={'/signuppage'} component={SignUpPage} />
-                            <Route path={'/searchpage'} render={({location}) => {
+                            <Route path={'/searchpage'} render={({...props}) => {
                                 return (this.state.log || TokenService.hasAuthToken())
-                                    ? <SearchPage />
+                                    ? <SearchPage {...props} />
                                     : <Redirect
                                         to={{
                                             pathname: '/loginpage',
-                                            state: { from: location }
+                                            state: { from: props.location }
                                         }}
                                     />
                             }}>
                             </Route>
-                            <Route path={'/dashboard'} render={({location}) => {
+                            <Route path={'/dashboard'} render={({...props}) => {
                                 return (this.state.log || TokenService.hasAuthToken())
-                                    ? <Dashboard />
+                                    ? <Dashboard {...props} />
                                     : <Redirect
                                         to={{
                                             pathname: '/loginpage',
-                                            state: { from: location }
+                                            state: { from: props.location }
                                         }}
                                     />
                             }}>

@@ -6,7 +6,7 @@ class DisasterProgram extends Component {
         expand: false,
     }
 
-    generatePlanStepsByStage = (stage) => {
+    renderPlanStepsByStage = (stage) => {
         return this.props.disaster_plan_steps.filter(step => step.disaster_plan_step_stage.toLowerCase() === stage).map(step => <li key={step.disaster_plan_step_id}>{step.disaster_plan_step}</li>);
     };
 
@@ -26,19 +26,20 @@ class DisasterProgram extends Component {
                 <article>
                     <h3>Readiness Stage</h3>
                     <ul>
-                        {this.generatePlanStepsByStage('readiness')}
+                        {this.renderPlanStepsByStage('readiness')}
                     </ul>
 
                     <h3>Response Stage</h3>
                     <ul>
-                        {this.generatePlanStepsByStage('response')}
+                        {this.renderPlanStepsByStage('response')}
                     </ul>
 
                     <h3>Recovery Stage</h3>
                     <ul>
-                        {this.generatePlanStepsByStage('recovery')}
+                        {this.renderPlanStepsByStage('recovery')}
                     </ul>
                 </article>
+                <button className='item y-btn' onClick={() => this.props.handlePopulateLists(this.props.disaster_program_id)}><i className="material-icons">add_task</i></button>
                 <button className='item r-btn' onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}><i className="material-icons">delete</i></button>
             </div>
         );

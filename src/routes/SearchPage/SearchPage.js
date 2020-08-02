@@ -4,6 +4,8 @@ import './SearchPage.css';
 
 class SearchPage extends Component {
     render() {
+        console.log(this.props.history, 'Search Page')
+
         return (
             <SearchForm history={this.props.history}/>
         );

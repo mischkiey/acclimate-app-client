@@ -11,14 +11,17 @@ class SearchForm extends Component {
 
     handleSearchFormSubmit(e) {
         e.preventDefault();
+        console.log(this.props)
 
         this.setState({error: null});
 
         const token = TokenService.getAuthToken();
         const disaster_program_id = e.target.disaster.value;
+        console.log(this.props)
 
         return APIService.post('/disaster/user/program', {disaster_program_id}, token)
             .then(response => {
+                console.log(this.props)
                 this.props.history.push('/dashboard');
             })
             .catch(({error}) => {
