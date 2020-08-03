@@ -44,8 +44,6 @@ a, p, ol, ul, label, input, button {
 }
 
 a {
-    font-family: 'IBM Plex Serif', serif;
-    font-weight: 600;
     text-decoration: none;
 }
 
@@ -109,10 +107,41 @@ form {
     justify-content: center;
 }
 
+
+.buttons-group {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.search-form-group {
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px #B6B6B6;
+    margin: 10px;
+    padding: 15px;
+}
+
+.search-form-inputs-group {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 10px;
+}
+
+.search-form-input-group {
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #B6B6B6;
+    display: flex;
+    flex-flow: column;
+    margin: 10px;
+}
+
 /* Element default */
 
 .main {
-    background-color: #ffff6b;
+    background-color: #FFFF6b;
     border-radius: 10px;
     box-shadow: 2px 2px 4px #B6B6B6;
     padding: 10px;
@@ -131,6 +160,10 @@ label, input, button {
     background-color: white;
 }
 
+/* .s-btn {
+    background-color: #FFFF6b;
+} */
+
 .r-btn:hover {
     color: #B00020;
     cursor: pointer;
@@ -145,7 +178,7 @@ label, input, button {
 
 .error {
     color: #B00020;
-    font-family: 'IBM Plex Serif';
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
     text-align: left;
 }
@@ -175,28 +208,6 @@ label, input, button {
     padding: 15px;
 }
 
-.buttons-group {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-}
-
-.search-form-inputs-group {
-    display: flex;
-    flex-flow: column;
-    margin-bottom: 10px;
-}
-
-.search-form-input-group {
-    align-items: center;
-    background-color: #FFF;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px #B6B6B6;
-    display: flex;
-    flex-flow: column;
-    margin: 10px;
-}
-
 .search-input-image {
     height: 300px;
     width: 75%;
@@ -208,16 +219,14 @@ input {
 
 @media all and (min-width: 800px) {
     .wrapper {
-        width: 80%;
+        width: 75%;
     }
 
     .group {
-        display: flex;
         flex-flow: row;
     }
 
     .main {
-        border-radius: 10px;
         padding: 15px;
     }
 

@@ -73,7 +73,7 @@ class SearchForm extends Component {
             <>
                 <h2 className='center'>Select a Disaster Program</h2>
                 <form
-                    className='white'
+                    className='search-form-group'
                     onSubmit={(e) => this.handleSearchFormSubmit(e)}
                 >
                     {
@@ -87,7 +87,7 @@ class SearchForm extends Component {
                     <div className='search-form-inputs-group'>
                         {options}
                     </div>
-                    <button className='y-btn'>
+                    <button className='y-btn s-btn'>
                         <i className="material-icons">add_circle</i>
                     </button>
                 </form>

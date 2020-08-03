@@ -29,7 +29,8 @@ class LoginForm extends Component {
                 this.props.history.push('/dashboard');
             })
             .catch(({error}) => {
-                this.setState({error});
+                console.log(error)
+                this.setState({error})
             });
     };
     
@@ -40,7 +41,7 @@ class LoginForm extends Component {
                     (this.state.error)
                         ? 
                             <div className='error'>
-                                <p className='error'>{this.state.error}!</p>
+                                <p className='error'><i className="material-icons">error</i> {this.state.error}!</p>
                             </div>
                         : ''
                 }
