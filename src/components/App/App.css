@@ -24,9 +24,9 @@ body {
 
 /* Header text default */
 h1, h2, h3 {
-    color: #37474f;
+    color: #333333;
     font-family: 'IBM Plex Serif', serif;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 h1 {
@@ -36,13 +36,15 @@ h1 {
 /* Text default */
 
 p, ol, ul, a, label, input, button {
-    color: #37474f;
+    color: #333333;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 16px;
     font-weight: 300;
 }
 
 input {
+    border: 0;
+    border-bottom: 2px solid #FFEE58;
     font-size: 14px;
 }
 
@@ -65,7 +67,7 @@ form {
 /* Element default */
 
 .main {
-    /* border: 1px solid #37474f; */
+    /* border: 3px solid #333333; */
     border-radius: 10px;
     box-shadow: 1px 1px 3px #B6B6B6;
     padding: 10px;
@@ -110,7 +112,7 @@ label, input, button {
 }
 
 .tooltip .tooltiptext {
-    background-color:  #37474f;
+    background-color:  #333333;
     border-radius: 5px;
     padding: 5px;
 

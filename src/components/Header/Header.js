@@ -81,7 +81,7 @@ function Header() {
                     <header className='group wrapper'>
                         <Link 
                             to='/'
-                            className='item'
+                            className='item y-btn'
                         >
                             <h1>Acclimate.</h1>
                         </Link> 
