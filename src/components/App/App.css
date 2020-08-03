@@ -103,6 +103,12 @@ form {
     margin: 5px;
 }
 
+.list-group {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
 /* Element default */
 
 .main {

@@ -3,7 +3,6 @@ import APIService from '../../services/api-services';
 import TokenService from '../../services/token-services';
 import TaskItem from './TaskItem';
 import { ExperimentalContext } from '../../contexts/ExperimentalContext';
-import './TaskList.css';
 
 class TaskList extends Component {
     static contextType = ExperimentalContext;
