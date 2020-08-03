@@ -34,12 +34,41 @@ class TaskList extends Component {
             });
     };
 
-    handleEditTask = (e, user_id, user_task_id) => {
+    handleCheckTask = (e, user_id, user_task_id, user_task_completed) => {
+        this.setState({error: null});
+        const newUserTask = {
+            user_task_id,
+            user_task: e.target.value,
+            user_task_completed: !user_task_completed,
+        };
+        const token = TokenService.getAuthToken();
+
+        return APIService.patch(`/disaster/user/task/${user_task_id}`, newUserTask, token)
+            .then(() => {
+                const newUserTasks = this.context.tasks.filter(task => task.user_task_id !== newUserTask.user_task_id);
+                newUserTask.user_id = user_id;
+                newUserTasks.push(newUserTask);
+                newUserTasks.sort((a, b) => {
+                    if(a.user_task_id < b.user_task_id) {
+                        return - 1;
+                    } else {
+                        return 1;
+                    };
+                });
+                this.context.setTasks(newUserTasks);
+            })
+            .catch(error => {
+                this.setState({...error});
+            });
+    };
+
+    handleEditTask = (e, user_id, user_task_id, user_task_completed) => {
         this.setState({error: null});
 
         const newUserTask = {
             user_task_id,
             user_task: e.target.value,
+            user_task_completed,
         };
         const token = TokenService.getAuthToken();
 
@@ -91,6 +120,7 @@ class TaskList extends Component {
         const tasks = this.context.tasks.map(task =>
             <TaskItem
                 key={task.user_task_id}
+                handleCheckTask={this.handleCheckTask}
                 handleDeleteTask={this.handleDeleteTask}
                 handleEditTask={this.handleEditTask}
                 {...task}

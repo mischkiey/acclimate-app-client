@@ -217,6 +217,10 @@ input {
     width: 50%;
 }
 
+.completed {
+    text-decoration: line-through;
+}
+
 @media all and (min-width: 800px) {
     .wrapper {
         width: 75%;

@@ -35,6 +35,35 @@ class ShoppingList extends Component {
             });
     };
 
+    handleCheckShoppingItem = (e, user_id, user_shopping_item_id, user_shopping_item_completed) => {
+        this.setState({error: null});
+
+        const newUserShoppingItem = {
+            user_shopping_item_id,
+            user_shopping_item: e.target.value,
+            user_shopping_item_completed: !user_shopping_item_completed,
+        };
+        const token = TokenService.getAuthToken();
+
+        return APIService.patch(`/disaster/user/shopping/${user_shopping_item_id}`, newUserShoppingItem, token)
+            .then(() => {
+                const newUserShoppingItems = this.context.shoppingItems.filter(shoppingItem => shoppingItem.user_shopping_item_id !== newUserShoppingItem.user_shopping_item_id);
+                newUserShoppingItem.user_id = user_id;
+                newUserShoppingItems.push(newUserShoppingItem);
+                newUserShoppingItems.sort((a, b) => {
+                    if(a.user_shopping_item_id < b.user_shopping_item_id) {
+                        return - 1;
+                    } else {
+                        return 1;
+                    };
+                });
+                this.context.setShoppingItems(newUserShoppingItems)
+            })
+            .catch(error => {
+                this.setState({...error});
+            });
+    };
+
     handleEditShoppingItem = (e, user_id, user_shopping_item_id) => {
         this.setState({error: null});
 
@@ -92,6 +121,7 @@ class ShoppingList extends Component {
         const shoppingItems = this.context.shoppingItems.map(shoppingItem => 
             <ShoppingItem
                 key={shoppingItem.user_shopping_item_id}
+                handleCheckShoppingItem={this.handleCheckShoppingItem}
                 handleDeleteShoppingItem={this.handleDeleteShoppingItem}
                 handleEditShoppingItem={this.handleEditShoppingItem}
                 {...shoppingItem}

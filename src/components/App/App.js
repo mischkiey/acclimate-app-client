@@ -9,6 +9,7 @@ import LoginPage from '../../routes/LoginPage/LoginPage';
 import SignUpPage from '../../routes/SignUpPage/SignUpPage';
 import Dashboard from '../../routes/Dashboard/Dashboard';
 import SearchPage from '../../routes/SearchPage/SearchPage';
+import HelpPage from '../../routes/HelpPage/HelpPage';
 
 import './App.css';
 
@@ -37,6 +38,17 @@ class App extends Component {
                         <Route path={'/dashboard'} render={({...props}) => {
                             return (this.context.log || TokenService.hasAuthToken())
                                 ? <Dashboard {...props} />
+                                : <Redirect
+                                    to={{
+                                        pathname: '/loginpage',
+                                        state: { from: props.location }
+                                    }}
+                                />
+                        }}>
+                        </Route>
+                        <Route path={'/helppage'} render={({...props}) => {
+                            return (this.context.log || TokenService.hasAuthToken())
+                                ? <HelpPage {...props} />
                                 : <Redirect
                                     to={{
                                         pathname: '/loginpage',
