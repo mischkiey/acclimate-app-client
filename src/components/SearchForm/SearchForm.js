@@ -74,7 +74,7 @@ class SearchForm extends Component {
             <>
                 <h2 className='center'>Select a Disaster Program</h2>
                 <form
-                    className=''
+                    className='white'
                     onSubmit={(e) => this.handleSearchFormSubmit(e)}
                 >
                     {

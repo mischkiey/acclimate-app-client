@@ -54,25 +54,9 @@ class DisasterProgram extends Component {
 
     renderExpandedDisasterProgram = () => {
         return (
-            <div className='disaster-program-group'>
-                
+            <div className='disaster-program-group'> 
                 <article>
-                    <button
-                        className='item r-btn tooltip'
-                        onClick={() => this.handleToggleDisasterProgram()}
-                    >
-                        <i className="material-icons">unfold_less</i>
-                        <span className='tooltiptext'>
-                            Less
-                        </span>
-                    </button>
-                    <button
-                        className='item r-btn'
-                        onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}
-                    >
-                        <i className="material-icons">delete</i>
-                    </button>
-                        <h2 className='center'>{this.props.disaster_name} Disaster Program</h2>
+                    <h2 className='center'>{this.props.disaster_name} Disaster Program</h2>
                     <p>
                         {this.props.disaster_program_information}
                     </p>
@@ -93,6 +77,23 @@ class DisasterProgram extends Component {
                     <ul>
                         {this.renderPlanStepsByStage('recovery')}
                     </ul>
+                    <div className='buttons'>
+                        <button
+                            className='item left r-btn'
+                            onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}
+                        >
+                            <i className="material-icons">delete</i>
+                        </button>
+                        <button 
+                            className='item right tooltip r-btn'
+                            onClick={() => this.handleToggleDisasterProgram()}
+                        >
+                            <i className="material-icons">unfold_less</i>
+                            <span className='tooltiptext'>
+                                Less
+                            </span>
+                        </button>
+                    </div>
                 </article>
             </div>
         );
@@ -102,25 +103,27 @@ class DisasterProgram extends Component {
         return (
             <div className='disaster-program-group'>
                 <article>
-                    <button 
-                        className='item tooltip y-btn'
-                        onClick={() => this.handleToggleDisasterProgram()}
-                    >
-                        <i className="material-icons">unfold_more</i>
-                        <span className='tooltiptext'>
-                            More
-                        </span>
-                    </button>
-                    <button
-                        className='item r-btn'
-                        onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}
-                    >
-                        <i className="material-icons">delete</i>
-                    </button>
                     <h2 className='center'>{this.props.disaster_name} Disaster Program</h2>
                     <p>
                         {this.props.disaster_program_information}
                     </p>
+                    <div className='buttons'>
+                        <button
+                            className='item left r-btn'
+                            onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}
+                        >
+                            <i className="material-icons">delete</i>
+                        </button>
+                        <button 
+                            className='item right tooltip y-btn'
+                            onClick={() => this.handleToggleDisasterProgram()}
+                        >
+                            <i className="material-icons">unfold_more</i>
+                            <span className='tooltiptext'>
+                                More
+                            </span>
+                        </button>
+                    </div>
                 </article>
             </div>
         );

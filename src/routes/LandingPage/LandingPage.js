@@ -4,7 +4,7 @@ import './LandingPage.css';
 
 function LandingPage () {
     return (
-        <>
+        <div className='white'>
             <i className="material-icons">face</i>
             <h2>Description:</h2>
             <p>
@@ -35,7 +35,7 @@ function LandingPage () {
                     Any complaints, feedback, questions? Feel free to send me a message!
                 </Link>
             </p> */}
-        </>
+        </div>
     );
 };
 

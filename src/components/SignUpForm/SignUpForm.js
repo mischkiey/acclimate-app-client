@@ -35,7 +35,7 @@ class SignUpForm extends Component {
     render() {
         return (
             <>
-                <form onSubmit={(e) => this.handleSubmitSignUpForm(e)}>
+                <form className='white' onSubmit={(e) => this.handleSubmitSignUpForm(e)}>
                     
                     {
                         (this.state.error)

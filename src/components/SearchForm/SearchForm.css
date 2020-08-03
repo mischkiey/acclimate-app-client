@@ -6,8 +6,10 @@
 
 .search-form-input-group {
     align-items: center;
+    background-color: #FFF;
+    /* border: 1px solid #ffff6b; */
     border-radius: 10px;
-    box-shadow: 1px 1px 3px #B6B6B6;
+    box-shadow: 2px 2px 5px #B6B6B6;
     display: flex;
     flex-flow: column;
     margin: 10px;

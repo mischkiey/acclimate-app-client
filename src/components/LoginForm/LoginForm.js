@@ -35,7 +35,7 @@ class LoginForm extends Component {
     
     render() {
         return (
-            <form onSubmit={(e) => this.handleSubmitLoginForm(e)}>
+            <form className='white' onSubmit={(e) => this.handleSubmitLoginForm(e)}>
                 {
                     (this.state.error)
                         ? 

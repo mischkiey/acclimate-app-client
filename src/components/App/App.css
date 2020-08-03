@@ -43,8 +43,8 @@ a {
     text-decoration: none;
 }
 
-h1:hover, a:hover {
-    text-shadow: 0.5px 0.5px 1px #333333;
+a:hover {
+    color: #c6a700;
 }
 
 input {
@@ -74,6 +74,7 @@ form {
 
 .main {
     /* border: 3px solid #333333; */
+    background-color: #ffff6b;
     border-radius: 10px;
     box-shadow: 1px 1px 3px #B6B6B6;
     padding: 10px;
@@ -139,12 +140,36 @@ label, input, button {
 }
 
 .disaster-program-group {
+    background-color: #FFF;
     border-radius: 10px;
     box-shadow: 3px 3px 7px #B6B6B6;
     display: flex;
     flex-flow: column;
+    justify-content: space-between;
     padding: 5px;
     margin: 3px;
+}
+
+.white {
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px #B6B6B6;
+    margin: 10px;
+    padding: 15px;
+}
+
+.buttons {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+/* item {
+    flex: 1;
+} */
+
+.left {
+    text-align: left;
 }
 
 @media all and (min-width: 800px) {
