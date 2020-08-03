@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import DisasterProgramList from '../../components/DisasterProgram/DisasterProgramList';
 import TaskList from '../../components/TaskList/TaskList';
 import ShoppingList from '../../components/ShoppingList/ShoppingList';
-import './Dashboard.css';
 
 class Dashboard extends Component {
     render () {

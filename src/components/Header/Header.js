@@ -13,7 +13,7 @@ function Header() {
                         <ul>
                             <li className='tooltip'>
                                 <Link
-                                    className='y-link'
+                                    className='y-btn'
                                     to='/helppage'
                                 >
                                     <i className="material-icons">help_outline</i>
@@ -24,7 +24,7 @@ function Header() {
                             </li>
                             <li className='tooltip'>
                                 <Link
-                                    className='y-link'
+                                    className='y-btn'
                                     to='/searchpage'
                                 >
                                     <i className="material-icons">search</i>
@@ -35,7 +35,7 @@ function Header() {
                             </li>
                             <li className='tooltip'>
                                 <Link
-                                    className='y-link'
+                                    className='y-btn'
                                     to='/dashboard'
                                 >
                                     <i className="material-icons">dashboard</i>
@@ -46,7 +46,7 @@ function Header() {
                             </li>
                             <li className='tooltip' >
                                 <Link
-                                    className='r-link'
+                                    className='r-btn'
                                     onClick={() => value.handleUserLogOut()} to='/'
                                 >
                                     <i className="material-icons">power_settings_new</i>

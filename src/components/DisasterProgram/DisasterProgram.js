@@ -77,7 +77,7 @@ class DisasterProgram extends Component {
                     <ul>
                         {this.renderPlanStepsByStage('recovery')}
                     </ul>
-                    <div className='buttons'>
+                    <div className='buttons-group'>
                         <button
                             className='item left r-btn'
                             onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}
@@ -107,7 +107,7 @@ class DisasterProgram extends Component {
                     <p>
                         {this.props.disaster_program_information}
                     </p>
-                    <div className='buttons'>
+                    <div className='buttons-group'>
                         <button
                             className='item left r-btn'
                             onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}
