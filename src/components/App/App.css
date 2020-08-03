@@ -181,6 +181,31 @@ label, input, button {
     justify-content: space-between;
 }
 
+.search-form-inputs-group {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 10px;
+}
+
+.search-form-input-group {
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #B6B6B6;
+    display: flex;
+    flex-flow: column;
+    margin: 10px;
+}
+
+.search-input-image {
+    height: 300px;
+    width: 75%;
+}
+
+input {
+    width: 50%;
+}
+
 @media all and (min-width: 800px) {
     .wrapper {
         width: 80%;
@@ -214,5 +239,14 @@ label, input, button {
     .tooltip:hover .tooltiptext {
         visibility: visible;
         opacity: 0.8;
+    }
+
+    .search-form-inputs-group {
+        flex-flow: row wrap;
+    }
+
+    .search-input-image {
+        height: 300px;
+        width: 100%;
     }
 }

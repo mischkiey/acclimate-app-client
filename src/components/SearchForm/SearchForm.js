@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import APIService from '../../services/api-services';
 import TokenService from '../../services/token-services';
 // import { ExperimentalContext } from '../../contexts/ExperimentalContext';
-import './SearchForm.css';
 
 class SearchForm extends Component {
     state = {
