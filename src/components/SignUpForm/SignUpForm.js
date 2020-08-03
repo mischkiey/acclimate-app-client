@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import APIService from '../../services/api-services';
 // import AcclimateContext from '../../contexts/AcclimateContext';
 import { ExperimentalContext } from '../../contexts/ExperimentalContext'
-import './SignUpForm.css';
 
 class SignUpForm extends Component {
     static contextType = ExperimentalContext;

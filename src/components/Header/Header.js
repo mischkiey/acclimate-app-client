@@ -64,7 +64,7 @@ function Header() {
                                 className=''
                                 to='/loginpage'
                             >
-                                Log In
+                                Login
                             </Link>
                         </li>
                         <li>
@@ -72,7 +72,7 @@ function Header() {
                                 className=''
                                 to='/signuppage'
                             >
-                                Sign Up
+                                Signup
                             </Link>
                         </li>
                     </ul>)

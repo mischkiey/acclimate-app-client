@@ -1,5 +1,4 @@
 import React from 'react';
-import './ShoppingList.css';
 
 function ShoppingItem(props) {
     return (

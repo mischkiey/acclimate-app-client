@@ -4,7 +4,6 @@ import TokenService from '../../services/token-services';
 import { ExperimentalContext } from '../../contexts/ExperimentalContext';
 
 import DisasterProgram from '../../components/DisasterProgram/DisasterProgram';
-import './DisasterProgram.css'
 
 class DisasterProgramList extends Component {
     static contextType = ExperimentalContext;

@@ -4,7 +4,6 @@ import TokenService from '../../services/token-services';
 import { ExperimentalContext } from '../../contexts/ExperimentalContext';
 
 import ShoppingItem from './ShoppingItem';
-import './ShoppingList.css';
 
 class ShoppingList extends Component {
     static contextType = ExperimentalContext;

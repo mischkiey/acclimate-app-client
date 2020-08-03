@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './DisasterProgram.css';
 
 class DisasterProgram extends Component {
     state = {
@@ -73,7 +72,7 @@ class DisasterProgram extends Component {
                     >
                         <i className="material-icons">delete</i>
                     </button>
-                    <h2 className='center'>Disaster Program</h2>
+                        <h2 className='center'>{this.props.disaster_name} Disaster Program</h2>
                     <p>
                         {this.props.disaster_program_information}
                     </p>
@@ -118,7 +117,7 @@ class DisasterProgram extends Component {
                     >
                         <i className="material-icons">delete</i>
                     </button>
-                    <h2 className='center'>Disaster Program</h2>
+                    <h2 className='center'>{this.props.disaster_name} Disaster Program</h2>
                     <p>
                         {this.props.disaster_program_information}
                     </p>

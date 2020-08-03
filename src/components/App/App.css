@@ -2,16 +2,12 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 body {
-    /* background-image: url(../../images/hurricane.jpg);
-    filter: saturate(1); */
     margin-top: 0;
 }
 
 /* Reusable app/global-level CSS properties */
 .wrapper {
-    /* width: 95%; */
     margin: auto;
-    /* border: 1px solid #04030B */
 }
 
 .center {
@@ -35,14 +31,24 @@ h1 {
 
 /* Text default */
 
-p, ol, ul, a, label, input, button {
+a, p, ol, ul, label, input, button {
     color: #333333;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 16px;
     font-weight: 300;
 }
 
+a {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+h1:hover, a:hover {
+    text-shadow: 0.5px 0.5px 1px #333333;
+}
+
 input {
+    background-color: #FFF;
     border: 0;
     border-bottom: 2px solid #FFEE58;
     font-size: 14px;
@@ -84,11 +90,13 @@ label, input, button {
 .r-link:hover {
     color: #B00020;
     cursor: pointer;
+    text-shadow: 1px 1px 2px #333333;
 }
 
 .y-link:hover {
     color: #fdd835;
     cursor: pointer;
+    text-shadow: 1px 1px 2px #333333;
 }
 
 .r-btn, .y-btn {
@@ -99,11 +107,13 @@ label, input, button {
 .r-btn:hover {
     color: #B00020;
     cursor: pointer;
+    text-shadow: 1px 1px 2px #333333;
 }
 
 .y-btn:hover {
     color: #fdd835;
     cursor: pointer;
+    text-shadow: 1px 1px 2px #333333;
 }
 
 .error {
@@ -148,33 +158,14 @@ label, input, button {
     }
 
     .main {
-        /* border: 1px solid #37474f; */
         border-radius: 10px;
     }
 
     /* Tooltip default */
 
     .tooltip {
-        /* display: inline-block; */
         position: relative;
     }
-    
-    /* .tooltip .tooltiptext {
-        background-color:  #37474f;
-        border-radius: 5px;
-        padding: 5px;
-    
-        color: #FFF;
-        font-size: 12px;
-        text-align: center;
-        
-        bottom: 60%;
-        left: 50%;
-        position: absolute;
-        z-index: 1;
-    
-        visibility: hidden;    
-    } */
     
     .tooltip .long.tooltiptext {
         text-align: left;

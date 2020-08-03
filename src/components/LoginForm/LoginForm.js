@@ -3,7 +3,6 @@ import APIService from '../../services/api-services';
 import TokenService from '../../services/token-services';
 // import AcclimateContext from '../../contexts/AcclimateContext';
 import { ExperimentalContext } from '../../contexts/ExperimentalContext'
-import './LoginForm.css';
 
 class LoginForm extends Component {
     static contextType = ExperimentalContext;
