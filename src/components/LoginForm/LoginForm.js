@@ -26,15 +26,20 @@ class LoginForm extends Component {
                 const token = response.authToken;
                 TokenService.saveAuthToken(token);
                 this.context.handleUserLog();
-                this.props.history.push('/dashboard');
+
+                if(!!window.localStorage.getItem('user_name')) {
+                    this.props.history.push('/helppage');
+                } else {
+                    this.props.history.push('/dashboard');
+                };
             })
             .catch(({error}) => {
-                console.log(error)
                 this.setState({error})
             });
     };
     
     render() {
+        console.log(this.props)
         return (
             <form className='white' onSubmit={(e) => this.handleSubmitLoginForm(e)}>
                 {

@@ -10,6 +10,15 @@ class SignUpForm extends Component {
         error: null,
     };
 
+    handleUserNameValidation = (e) => {
+        const user_name = e.target.value;
+        if (user_name.indexOf(' ') >= 0) {
+            this.setState({error: 'Username must not contain any spaces, please'})
+        } else {
+            this.setState({error: null})
+        };
+    };
+
     handleSubmitSignUpForm = (e) => {
         e.preventDefault();
 
@@ -36,33 +45,40 @@ class SignUpForm extends Component {
         return (
             <>
                 <form className='white' onSubmit={(e) => this.handleSubmitSignUpForm(e)}>
-                    
                     {
                         (this.state.error)
                             ? 
                                 <div className='error'>
-                                    <p className='error'><i className="material-icons">error</i> {this.state.error}!</p>
+                                    <p className='error'>
+                                        <i className="material-icons">error</i>
+                                        {this.state.error}!                                        
+                                    </p>
                                 </div>
                             : ''
                     }
 
-                    <label htmlFor="user_full_name">Full Name:</label>
+                    <label htmlFor="user_full_name">Enter Full Name:</label>
                     <input
                         id="user_full_name"
                         type="text"
                     />
 
-                    <label htmlFor="user_name">Username:</label>
+                    <label htmlFor="user_name">Enter New Username:</label>
                     <input
                         id="user_name"
+                        onChange={(e) => this.handleUserNameValidation(e)}
                         type="text" 
                     />
-        
-                    <label htmlFor="user_password">Password:</label>
-                    <input
-                        id="user_password"
-                        type="text"
-                    />
+                    <div className='input-tooltip'>
+                        <label htmlFor="user_password">Enter New Password:</label>
+                        <input
+                            id="user_password"
+                            type="text"
+                        />
+                        <span className='input-tooltiptext'>
+                            Password must not start nor end with spaces, have more than 8 characters, and contain 1 upper, 1 lower, 1 number, and 1 special character. :)
+                        </span>
+                    </div>
 
                     <div>
                         <button className='y-btn'>

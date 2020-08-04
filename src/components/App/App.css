@@ -180,7 +180,7 @@ label, input, button {
     color: #B00020;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
-    text-align: left;
+    text-align: center;
 }
 
 .tooltip .tooltiptext {
@@ -219,6 +219,36 @@ input {
 
 .completed {
     text-decoration: line-through;
+}
+
+.input-tooltip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%
+}
+
+.input-tooltiptext {
+    visibility: hidden;
+    z-index: 1;
+}
+
+.input-tooltip:hover .input-tooltiptext {
+    background-color:  #333333;
+    border-radius: 5px;
+    padding: 5px;
+
+    color: #FFF;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    text-align: center;
+    
+    /* bottom: 60%; */
+    left: 60%;
+    position: absolute;
+    z-index: 1;
+
+    visibility: visible;
 }
 
 @media all and (min-width: 800px) {
