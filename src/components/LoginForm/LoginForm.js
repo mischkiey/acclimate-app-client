@@ -39,7 +39,6 @@ class LoginForm extends Component {
     };
     
     render() {
-        console.log(this.props)
         return (
             <form className='white' onSubmit={(e) => this.handleSubmitLoginForm(e)}>
                 {

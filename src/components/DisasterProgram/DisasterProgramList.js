@@ -21,7 +21,7 @@ class DisasterProgramList extends Component {
         };
         const token = TokenService.getAuthToken();
 
-        return APIService.post('/disaster/user/task', newUserTask, token)
+        return APIService.post('/user/task', newUserTask, token)
             .then(response => {
                 this.context.tasks.push(response);
                 const newTasks = this.context.tasks;
@@ -40,7 +40,7 @@ class DisasterProgramList extends Component {
         };
         const token = TokenService.getAuthToken();
 
-        return APIService.post('/disaster/user/shopping', newUserShoppingItem, token)
+        return APIService.post('/user/shopping', newUserShoppingItem, token)
             .then(response => {
                 this.context.shoppingItems.push(response);
                 const newShoppingItems = this.context.shoppingItems;
@@ -56,9 +56,9 @@ class DisasterProgramList extends Component {
 
         const token = TokenService.getAuthToken();
 
-        return APIService.del(`/disaster/user/program/${disaster_program_id}`, token)
+        return APIService.del(`/user/program/${disaster_program_id}`, token)
             .then(() => {
-                return APIService.get('/disaster/user/program', token)
+                return APIService.get('/user/program', token)
                     .then(programs => {
                         this.setState({programs})
                     })
@@ -76,7 +76,7 @@ class DisasterProgramList extends Component {
 
         const token = TokenService.getAuthToken();
 
-        return APIService.get('/disaster/user/program', token)
+        return APIService.get('/user/program', token)
             .then(programs => {
                 this.setState({programs})
             })

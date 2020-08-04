@@ -23,7 +23,7 @@ class ShoppingList extends Component {
         };
         const token = TokenService.getAuthToken();
 
-        return APIService.post('/disaster/user/shopping', newUserShoppingItem, token)
+        return APIService.post('/user/shopping', newUserShoppingItem, token)
             .then(response => {
                 this.context.shoppingItems.push(response);
                 const newShoppingItems = this.context.shoppingItems;
@@ -45,7 +45,7 @@ class ShoppingList extends Component {
         };
         const token = TokenService.getAuthToken();
 
-        return APIService.patch(`/disaster/user/shopping/${user_shopping_item_id}`, newUserShoppingItem, token)
+        return APIService.patch(`/user/shopping/${user_shopping_item_id}`, newUserShoppingItem, token)
             .then(() => {
                 const newUserShoppingItems = this.context.shoppingItems.filter(shoppingItem => shoppingItem.user_shopping_item_id !== newUserShoppingItem.user_shopping_item_id);
                 newUserShoppingItem.user_id = user_id;
@@ -73,7 +73,7 @@ class ShoppingList extends Component {
         };
         const token = TokenService.getAuthToken();
 
-        return APIService.patch(`/disaster/user/shopping/${user_shopping_item_id}`, newUserShoppingItem, token)
+        return APIService.patch(`/user/shopping/${user_shopping_item_id}`, newUserShoppingItem, token)
             .then(() => {
                 const newUserShoppingItems = this.context.shoppingItems.filter(shoppingItem => shoppingItem.user_shopping_item_id !== newUserShoppingItem.user_shopping_item_id);
                 newUserShoppingItem.user_id = user_id;
@@ -96,7 +96,7 @@ class ShoppingList extends Component {
         this.setState({error: null})
 
         const token = TokenService.getAuthToken();
-        return APIService.del(`/disaster/user/shopping/${user_shopping_item_id}`, token)
+        return APIService.del(`/user/shopping/${user_shopping_item_id}`, token)
             .then(response => {
                 const newUserShoppingItems = this.context.shoppingItems.filter(shoppingItem => shoppingItem.user_shopping_item_id !== user_shopping_item_id);
                 this.context.setShoppingItems(newUserShoppingItems);
@@ -108,7 +108,7 @@ class ShoppingList extends Component {
 
     componentDidMount() {
         const token = TokenService.getAuthToken();
-        return APIService.get('/disaster/user/shopping', token)
+        return APIService.get('/user/shopping', token)
             .then(shoppingItems => {
                 this.context.setShoppingItems(shoppingItems)
             })

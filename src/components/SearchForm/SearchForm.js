@@ -17,7 +17,7 @@ class SearchForm extends Component {
         const token = TokenService.getAuthToken();
         const disaster_program_id = e.target.disaster.value;
 
-        return APIService.post('/disaster/user/program', {disaster_program_id}, token)
+        return APIService.post('/user/program', {disaster_program_id}, token)
             .then(() => {
                 this.props.history.push('/dashboard');
             })

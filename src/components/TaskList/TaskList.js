@@ -22,7 +22,7 @@ class TaskList extends Component {
         };
         const token = TokenService.getAuthToken();
 
-        return APIService.post('/disaster/user/task', newUserTask, token)
+        return APIService.post('/user/task', newUserTask, token)
             .then(response => {
                 this.context.tasks.push(response);
                 const newTasks = this.context.tasks;
@@ -43,7 +43,7 @@ class TaskList extends Component {
         };
         const token = TokenService.getAuthToken();
 
-        return APIService.patch(`/disaster/user/task/${user_task_id}`, newUserTask, token)
+        return APIService.patch(`/user/task/${user_task_id}`, newUserTask, token)
             .then(() => {
                 const newUserTasks = this.context.tasks.filter(task => task.user_task_id !== newUserTask.user_task_id);
                 newUserTask.user_id = user_id;
@@ -72,7 +72,7 @@ class TaskList extends Component {
         };
         const token = TokenService.getAuthToken();
 
-        return APIService.patch(`/disaster/user/task/${user_task_id}`, newUserTask, token)
+        return APIService.patch(`/user/task/${user_task_id}`, newUserTask, token)
             .then(() => {
                 const newUserTasks = this.context.tasks.filter(task => task.user_task_id !== newUserTask.user_task_id);
                 newUserTask.user_id = user_id;
@@ -95,7 +95,7 @@ class TaskList extends Component {
         this.setState({error: null})
 
         const token = TokenService.getAuthToken();
-        return APIService.del(`/disaster/user/task/${user_task_id}`, token)
+        return APIService.del(`/user/task/${user_task_id}`, token)
             .then(() => {
                 const newUserTasks = this.context.tasks.filter(task => task.user_task_id !== user_task_id);
                 this.context.setTasks(newUserTasks);
@@ -107,7 +107,7 @@ class TaskList extends Component {
 
     componentDidMount() {
         const token = TokenService.getAuthToken();
-        return APIService.get('/disaster/user/task', token)
+        return APIService.get('/user/task', token)
             .then(tasks => {
                 this.context.setTasks(tasks);
             })
