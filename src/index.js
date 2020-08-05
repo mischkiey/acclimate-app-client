@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './components/App/App';
-import { ExperimentalProvider } from './contexts/ExperimentalContext';
+import { AcclimateProvider } from './contexts/AcclimateContext';
 
 ReactDOM.render(
     <BrowserRouter>
-        <ExperimentalProvider>
+        <AcclimateProvider>
             <App />
-        </ExperimentalProvider>
+        </AcclimateProvider>
     </BrowserRouter>, 
     document.getElementById('root')
 );

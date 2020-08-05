@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import APIService from '../../services/api-services';
 import TokenService from '../../services/token-services';
-// import { ExperimentalContext } from '../../contexts/ExperimentalContext';
+import { AcclimateContext } from '../../contexts/AcclimateContext';
 
 class SearchForm extends Component {
+    static contextType = AcclimateContext;
+
     state = {
-        disasters: [],
         error: null,
     };
 
@@ -33,7 +34,7 @@ class SearchForm extends Component {
 
         return APIService.get('/disaster', token)
             .then(response => {
-                this.setState({disasters: response})
+                this.context.setDisasters(response)
             })
             .catch(({error}) => {
                 this.setState({error})
@@ -41,11 +42,11 @@ class SearchForm extends Component {
     };
 
     componentWillUnmount() {
-        this.setState({disasters: []});
+        this.context.setDisasters([]);
     };
 
     render () {
-        const options = this.state.disasters.map(disaster =>
+        const options = this.context.disasters.map(disaster =>
             (
                 <div 
                     className='item search-form-input-group'

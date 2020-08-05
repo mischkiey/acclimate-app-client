@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import APIService from '../../services/api-services';
 import TokenService from '../../services/token-services';
-import { ExperimentalContext } from '../../contexts/ExperimentalContext';
+import { AcclimateContext } from '../../contexts/AcclimateContext';
 
 import DisasterProgram from '../../components/DisasterProgram/DisasterProgram';
 
 class DisasterProgramList extends Component {
-    static contextType = ExperimentalContext;
+    static contextType = AcclimateContext;
 
     state = {
-        programs: [],
         error: null,
     };
 
@@ -60,7 +59,7 @@ class DisasterProgramList extends Component {
             .then(() => {
                 return APIService.get('/user/program', token)
                     .then(programs => {
-                        this.setState({programs})
+                        this.context.setPrograms(programs)
                     })
                     .catch(error => {
                         this.setState({error})
@@ -78,7 +77,7 @@ class DisasterProgramList extends Component {
 
         return APIService.get('/user/program', token)
             .then(programs => {
-                this.setState({programs})
+                this.context.setPrograms(programs)
             })
             .catch(({error}) =>{
                 this.setState({error})
@@ -86,7 +85,7 @@ class DisasterProgramList extends Component {
     };
 
     render () {
-        const programs = this.state.programs.map(program =>
+        const programs = this.context.programs.map(program =>
             <DisasterProgram
                 key={program.disaster_program_id}
                 handleAddToTaskList={this.handleAddToTaskList}

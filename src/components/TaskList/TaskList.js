@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import APIService from '../../services/api-services';
 import TokenService from '../../services/token-services';
 import TaskItem from './TaskItem';
-import { ExperimentalContext } from '../../contexts/ExperimentalContext';
+import { AcclimateContext } from '../../contexts/AcclimateContext';
 
 class TaskList extends Component {
-    static contextType = ExperimentalContext;
+    static contextType = AcclimateContext;
 
     state = {
         error: null,
@@ -22,9 +22,11 @@ class TaskList extends Component {
         };
         const token = TokenService.getAuthToken();
 
-        return APIService.post('/user/task', newUserTask, token)
+        return APIService.post('/user/task', [newUserTask], token)
             .then(response => {
-                this.context.tasks.push(response);
+                response.forEach(task => {
+                    this.context.tasks.push(task)
+                })
                 const newTasks = this.context.tasks;
                 this.context.setTasks(newTasks)
                 user_task.value = '';

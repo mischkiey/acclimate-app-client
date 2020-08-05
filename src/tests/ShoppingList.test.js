@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
-import { ExperimentalProvider } from '../contexts/ExperimentalContext';
+import { AcclimateProvider } from '../contexts/AcclimateContext';
 
 import ShoppingList from '../components/ShoppingList/ShoppingList';
 
@@ -12,9 +12,9 @@ describe(`ShoppingList Component`, () => {
             const div = document.createElement('div');
             ReactDOM.render(
                 <BrowserRouter> 
-                    <ExperimentalProvider>
+                    <AcclimateProvider>
                         <ShoppingList />
-                    </ExperimentalProvider>  
+                    </AcclimateProvider>  
                 </BrowserRouter>
                 , div);
             ReactDOM.unmountComponentAtNode(div);
@@ -26,9 +26,9 @@ describe(`ShoppingList Component`, () => {
             const tree = renderer
                 .create(
                     <BrowserRouter> 
-                        <ExperimentalProvider>
+                        <AcclimateProvider>
                             <ShoppingList />
-                        </ExperimentalProvider>  
+                        </AcclimateProvider>  
                     </BrowserRouter>
                 )
                 .toJSON()

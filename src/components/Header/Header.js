@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-services';
-import { ExperimentalContext } from '../../contexts/ExperimentalContext';
+import { AcclimateContext } from '../../contexts/AcclimateContext';
 import './Header.css';
 
 function Header() {
     return (
-        <ExperimentalContext.Consumer>
+        <AcclimateContext.Consumer>
             {value => {
                 const links = (value.log || TokenService.hasAuthToken())
                     ? (
@@ -91,7 +91,7 @@ function Header() {
                     </header>
                 );
             }}
-        </ExperimentalContext.Consumer>
+        </AcclimateContext.Consumer>
     );
 };
 

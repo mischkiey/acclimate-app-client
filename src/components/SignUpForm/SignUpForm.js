@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import APIService from '../../services/api-services';
 // import AcclimateContext from '../../contexts/AcclimateContext';
-import { ExperimentalContext } from '../../contexts/ExperimentalContext'
+import { AcclimateContext } from '../../contexts/AcclimateContext';
 
 class SignUpForm extends Component {
-    static contextType = ExperimentalContext;
+    static contextType = AcclimateContext;
 
     state = {
         error: null,

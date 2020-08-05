@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Redirect, Route } from 'react-router-dom';
 import TokenService from '../../services/token-services';
-import { ExperimentalContext } from '../../contexts/ExperimentalContext';
+import { AcclimateContext } from '../../contexts/AcclimateContext';
 
 import Header from '../Header/Header';
 import LandingPage from '../../routes/LandingPage/LandingPage';
@@ -14,7 +14,7 @@ import HelpPage from '../../routes/HelpPage/HelpPage';
 import './App.css';
 
 class App extends Component {
-    static contextType = ExperimentalContext;
+    static contextType = AcclimateContext;
 
     render() {
         return (

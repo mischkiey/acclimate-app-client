@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import APIService from '../../services/api-services';
 import TokenService from '../../services/token-services';
-import { ExperimentalContext } from '../../contexts/ExperimentalContext';
+import { AcclimateContext } from '../../contexts/AcclimateContext';
 
 import ShoppingItem from './ShoppingItem';
 
 class ShoppingList extends Component {
-    static contextType = ExperimentalContext;
+    static contextType = AcclimateContext;
 
     state = {
         error: null,
@@ -23,9 +23,11 @@ class ShoppingList extends Component {
         };
         const token = TokenService.getAuthToken();
 
-        return APIService.post('/user/shopping', newUserShoppingItem, token)
+        return APIService.post('/user/shopping', [newUserShoppingItem], token)
             .then(response => {
-                this.context.shoppingItems.push(response);
+                response.forEach(shoppingItem => {
+                    this.context.shoppingItems.push(shoppingItem)
+                })
                 const newShoppingItems = this.context.shoppingItems;
                 this.context.setShoppingItems(newShoppingItems);
                 user_shopping_item.value = '';

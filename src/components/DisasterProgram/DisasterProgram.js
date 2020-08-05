@@ -27,7 +27,7 @@ class DisasterProgram extends Component {
                                 </span>
                             </button>
                         </li>
-                    )
+                    );
                 } else if (step.disaster_plan_step_itemable_type === 'Shopping Item') {
                     return (
                         <li key={step.disaster_plan_step_id}>
@@ -42,26 +42,19 @@ class DisasterProgram extends Component {
                                 </span>
                             </button>
                         </li>
-                    )
+                    );
                 } else {
                     return (
                         <li key={step.disaster_plan_step_id}>
                             {step.disaster_plan_step}
                         </li>
-                    )
+                    );
             };
     })};
 
     renderExpandedDisasterProgram = () => {
         return (
-            <div className='disaster-program-group'> 
-                <article>
-                    <h2 className='center'>{this.props.disaster_name} Disaster Program</h2>
-                    <p>
-                        {this.props.disaster_program_information}
-                    </p>
-                </article>
-                
+            <> 
                 <article>
                     <h3>Readiness Stage</h3>
                     <ul>
@@ -95,11 +88,33 @@ class DisasterProgram extends Component {
                         </button>
                     </div>
                 </article>
-            </div>
+            </>
         );
     };
 
     renderCollapsedDisasterProgram = () => {
+        return (
+            <div className='buttons-group'>
+                <button
+                    className='item left r-btn'
+                    onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}
+                >
+                    <i className="material-icons">delete</i>
+                </button>
+                <button 
+                    className='item right tooltip y-btn'
+                    onClick={() => this.handleToggleDisasterProgram()}
+                >
+                    <i className="material-icons">unfold_more</i>
+                    <span className='tooltiptext'>
+                        More
+                    </span>
+                </button>
+            </div>
+        );
+    };
+
+    render () {
         return (
             <div className='disaster-program-group'>
                 <article>
@@ -107,37 +122,13 @@ class DisasterProgram extends Component {
                     <p>
                         {this.props.disaster_program_information}
                     </p>
-                    <div className='buttons-group'>
-                        <button
-                            className='item left r-btn'
-                            onClick={() => this.props.handleDeleteDisasterProgram(this.props.disaster_program_id)}
-                        >
-                            <i className="material-icons">delete</i>
-                        </button>
-                        <button 
-                            className='item right tooltip y-btn'
-                            onClick={() => this.handleToggleDisasterProgram()}
-                        >
-                            <i className="material-icons">unfold_more</i>
-                            <span className='tooltiptext'>
-                                More
-                            </span>
-                        </button>
-                    </div>
                 </article>
+                        {
+                            (this.state.expand)
+                                ? this.renderExpandedDisasterProgram()
+                                : this.renderCollapsedDisasterProgram()
+                         }
             </div>
-        );
-    };
-
-    render () {
-        return (
-            <>
-                {
-                    (this.state.expand)
-                        ? this.renderExpandedDisasterProgram()
-                        : this.renderCollapsedDisasterProgram()
-                }
-            </>
         );
     };
 };
