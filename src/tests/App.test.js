@@ -11,8 +11,8 @@ describe(`App Component`, () => {
             ReactDOM.render(
                 <BrowserRouter>
                     <App />
-                </BrowserRouter>
-                , div);
+                </BrowserRouter>,
+                div);
             ReactDOM.unmountComponentAtNode(div);
         });
     });
