@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 .wrapper {
+    width: 95%;
     margin: auto;
 }
 
@@ -256,6 +257,7 @@ input {
 @media all and (min-width: 800px) {
     .wrapper {
         width: 75%;
+        margin: auto;
     }
 
     .group {
