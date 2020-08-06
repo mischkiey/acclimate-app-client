@@ -46,8 +46,9 @@ class SearchForm extends Component {
     };
 
     render () {
-        const options = this.context.disasters.map(disaster =>
-            (
+        const options = this.context.disasters.map(disaster => {
+            console.log(`./../../images/${disaster.disaster_name}.jpg`)
+            return (
                 <div 
                     className='item search-form-input-group'
                     key={disaster.disaster_id}
@@ -61,15 +62,14 @@ class SearchForm extends Component {
                         <img
                             alt={`${disaster.disaster_name}`}
                             className='search-input-image'
-                            src={`${disaster.disaster_image}`}
+                            src={require(`./../../images/${disaster.disaster_image}.jpg`)}
                         />
                         <label htmlFor={disaster.disaster_id}>
                             {disaster.disaster_name}
                         </label>
                 </div>
             )
-        );
-        
+            });
         return (
             <>
                 <h2 className='center'>Select a Disaster Program</h2>

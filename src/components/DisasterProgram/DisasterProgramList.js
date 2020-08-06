@@ -20,9 +20,11 @@ class DisasterProgramList extends Component {
         };
         const token = TokenService.getAuthToken();
 
-        return APIService.post('/user/task', newUserTask, token)
+        return APIService.post('/user/task', [newUserTask], token)
             .then(response => {
-                this.context.tasks.push(response);
+                response.forEach(task => {
+                    this.context.tasks.push(task);
+                });
                 const newTasks = this.context.tasks;
                 this.context.setTasks(newTasks);
             })
@@ -39,9 +41,11 @@ class DisasterProgramList extends Component {
         };
         const token = TokenService.getAuthToken();
 
-        return APIService.post('/user/shopping', newUserShoppingItem, token)
+        return APIService.post('/user/shopping', [newUserShoppingItem], token)
             .then(response => {
-                this.context.shoppingItems.push(response);
+                response.forEach(shoppingItem => {
+                    this.context.shoppingItems.push(shoppingItem);
+                });
                 const newShoppingItems = this.context.shoppingItems;
                 this.context.setShoppingItems(newShoppingItems);
             })
