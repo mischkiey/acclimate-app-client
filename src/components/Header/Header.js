@@ -40,7 +40,7 @@ function Header() {
                                 >
                                     <i className="material-icons">dashboard</i>
                                 </Link>
-                                <span className='short tooltiptext'>
+                                <span className='tooltiptext'>
                                     Dashboard
                                 </span>
                             </li>

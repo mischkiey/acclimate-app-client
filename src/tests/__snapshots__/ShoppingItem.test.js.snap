@@ -2,10 +2,10 @@
 
 exports[`ShoppingItem Component Snapshot test Renders the UI as expected 1`] = `
 <div
-  className="list-group"
+  className="list-item-group"
 >
   <input
-    className="item-input"
+    className="list-item-input"
     defaultValue="Logs"
     onChange={[Function]}
     type="text"

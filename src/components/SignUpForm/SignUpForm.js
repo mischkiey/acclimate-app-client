@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import APIService from '../../services/api-services';
-// import AcclimateContext from '../../contexts/AcclimateContext';
 import { AcclimateContext } from '../../contexts/AcclimateContext';
 
 class SignUpForm extends Component {

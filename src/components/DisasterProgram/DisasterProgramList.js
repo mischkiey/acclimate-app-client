@@ -100,7 +100,7 @@ class DisasterProgramList extends Component {
         )
 
         return (
-            <section className='dashboard-component-group item'>
+            <section className='dashboard-components-group item'>
                 {programs}
             </section>
         );

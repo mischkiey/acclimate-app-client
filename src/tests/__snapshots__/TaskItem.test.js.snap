@@ -2,10 +2,10 @@
 
 exports[`TaskItem Component Snapshot test Renders the UI as expected 1`] = `
 <div
-  className="list-group"
+  className="list-item-group"
 >
   <input
-    className="item-input"
+    className="list-item-input"
     defaultValue="Bring pets inside"
     onChange={[Function]}
     type="text"

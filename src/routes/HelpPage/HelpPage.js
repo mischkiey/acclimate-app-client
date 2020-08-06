@@ -4,7 +4,7 @@ class HelpPage extends Component {
     render() {
         return (
             <div className='white'>
-                <i className="material-icons">face</i>
+                <i className="material-icons">help_outline</i>
                 <h2>Description:</h2>
                 <p>
                     Acclimate is an informational and utility disaster management app that aims to provide accurate, reliable, and useful information and tools to be able to handle impending disasters systematically and effectively

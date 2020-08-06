@@ -8,11 +8,11 @@ class Dashboard extends Component {
         return (
             <div className='group'> 
                 <DisasterProgramList />
-                <section className='dashboard-component-group item'>
-                    <article className='disaster-utility-group item'>
+                <section className='dashboard-components-group item'>
+                    <article className='dashboard-component-group item'>
                         <TaskList />
                     </article>
-                    <article className='disaster-utility-group item'>
+                    <article className='dashboard-component-group item'>
                         <ShoppingList />
                     </article>
                 </section>

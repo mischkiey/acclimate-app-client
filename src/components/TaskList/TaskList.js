@@ -133,11 +133,11 @@ class TaskList extends Component {
             <>
                 <h2 className='center'>Task List</h2>
                 <form
-                    className='list-group'
+                    className='list-item-group'
                     onSubmit={(e) => this.handleAddTask(e)}
                 >
                     <input
-                        className='item-input'
+                        className='list-item-input'
                         name='add_user_task'
                         placeholder='Enter task'
                         type='text'

@@ -3,7 +3,7 @@ import React from 'react';
 function ShoppingItem(props) {
     return (
         <>
-            <div className='list-group'>
+            <div className='list-item-group'>
                 <button
                     className='y-btn'
                     onClick={(e) => props.handleCheckShoppingItem(e, props.user_id, props.user_shopping_item_id, props.user_shopping_item_completed)}
@@ -14,8 +14,8 @@ function ShoppingItem(props) {
                     className=
                         {
                             (props.user_shopping_item_completed)
-                                ? 'completed item-input' 
-                                : 'item-input'
+                                ? 'completed list-item-input' 
+                                : 'list-item-input'
                         }
                     type='text'
                     defaultValue={props.user_shopping_item}

@@ -8,11 +8,11 @@ Array [
     Shopping List
   </h2>,
   <form
-    className="list-group"
+    className="list-item-group"
     onSubmit={[Function]}
   >
     <input
-      className="item-input"
+      className="list-item-input"
       name="add_user_shopping_item"
       placeholder="Enter shopping item"
       type="text"

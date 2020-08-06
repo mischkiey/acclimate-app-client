@@ -18,10 +18,10 @@ class DisasterProgram extends Component {
                         <li key={step.disaster_plan_step_id}>
                             {step.disaster_plan_step}
                             <button 
-                                className='item tooltip y-btn'
+                                className='item small-button tooltip y-btn'
                                 onClick={() => this.props.handleAddToTaskList(step.disaster_plan_step_itemable_shorthand)}
                             >
-                                <i className="material-icons">add_task</i>
+                                <i className="material-icons small-icon">add_task</i>
                                 <span className='long tooltiptext'>
                                     Click to add this step to your task list
                                 </span>
@@ -33,10 +33,10 @@ class DisasterProgram extends Component {
                         <li key={step.disaster_plan_step_id}>
                             {step.disaster_plan_step}
                             <button
-                                className='item tooltip y-btn'
+                                className='item small-button tooltip y-btn'
                                 onClick={() => this.props.handleAddToShoppingList(step.disaster_plan_step_itemable_shorthand)}
                             >
-                                <i className="material-icons">add_shopping_cart</i>
+                                <i className="material-icons small-icon">add_shopping_cart</i>
                                 <span className='long tooltiptext'>
                                     Click to add this item to your shopping list
                                 </span>
@@ -116,7 +116,7 @@ class DisasterProgram extends Component {
 
     render () {
         return (
-            <div className='disaster-program-group'>
+            <div className='dashboard-component-group'>
                 <article>
                     <h2 className='center'>{this.props.disaster_name} Disaster Program</h2>
                     <p>

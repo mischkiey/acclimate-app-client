@@ -134,11 +134,11 @@ class ShoppingList extends Component {
             <>
                 <h2 className='center'>Shopping List</h2>
                 <form
-                    className='list-group'
+                    className='list-item-group'
                     onSubmit={(e) => this.handleAddShoppingItem(e)}
                 >
                     <input 
-                        className='item-input'
+                        className='list-item-input'
                         name='add_user_shopping_item'
                         placeholder='Enter shopping item'
                         type='text'

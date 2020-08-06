@@ -3,7 +3,7 @@ import React from 'react';
 function TaskItem(props) {
     return (
         <>  
-            <div className='list-group'>
+            <div className='list-item-group'>
                 <button
                     className='y-btn'
                     onClick={(e) => props.handleCheckTask(e, props.user_id, props.user_task_id, props.user_task_completed)}
@@ -14,8 +14,8 @@ function TaskItem(props) {
                     className=
                         {
                             (props.user_task_completed)
-                                ? 'completed item-input' 
-                                : 'item-input'
+                                ? 'completed list-item-input' 
+                                : 'list-item-input'
                         }
                     defaultValue={props.user_task}
                     onChange={(e) => {props.handleEditTask(e, props.user_id, props.user_task_id)}}

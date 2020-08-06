@@ -8,11 +8,11 @@ Array [
     Task List
   </h2>,
   <form
-    className="list-group"
+    className="list-item-group"
     onSubmit={[Function]}
   >
     <input
-      className="item-input"
+      className="list-item-input"
       name="add_user_task"
       placeholder="Enter task"
       type="text"

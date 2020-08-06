@@ -47,7 +47,6 @@ class SearchForm extends Component {
 
     render () {
         const options = this.context.disasters.map(disaster => {
-            console.log(`./../../images/${disaster.disaster_name}.jpg`)
             return (
                 <div 
                     className='item search-form-input-group'

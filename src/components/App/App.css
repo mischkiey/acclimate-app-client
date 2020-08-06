@@ -1,15 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=IBM+Plex+Sans:wght@300;400&family=IBM+Plex+Serif:wght@300;400&family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-body {
-    margin-top: 0;
-}
-
-/* Reusable app/global-like CSS properties */
-
 .wrapper {
     margin: auto;
 }
+
+/* Typography */
 
 .center {
     text-align: center;
@@ -23,7 +19,10 @@ body {
     text-align: right;
 }
 
-/* Text default/Typography */
+h1 {
+    font-size: 30px;
+    text-align: center;
+}
 
 h1, h2, h3 {
     color: #333333;
@@ -31,35 +30,13 @@ h1, h2, h3 {
     font-weight: 600;
 }
 
-h1 {
-    font-size: 30px;
-    text-align: center;
-}
-
-a, p, ol, ul, label, input, button {
+a, p, ol, ul, button, label, input {
     color: #333333;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 14px;
-    font-weight: 300;
 }
 
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    color: #c6a700;
-    font-size: 16px;
-}
-
-input {
-    background-color: #FFF;
-    border: 0;
-    border-bottom: 2px solid #FFEE58;
-    font-size: 14px;
-}
-
-/* Container/Flex properties default */
+/* Flex Properties */
 
 form {
     align-items: center;
@@ -69,6 +46,7 @@ form {
 
 .group {
     display: flex;
+    /* Column on mobile, row on desktop */
     flex-flow: column;
 }
 
@@ -76,93 +54,51 @@ form {
     flex: 1;
 }
 
-.dashboard-component-group {
-    display: flex;
-    flex-flow: column;
+/* Elements */
+
+a {
+    text-decoration: none;
 }
 
-.disaster-program-group {
-    background-color: #FFF;
-    border-radius: 10px;
-    box-shadow: 3px 3px 7px #B6B6B6;
-    display: flex;
-    flex-flow: column;
-    padding: 10px;
-    margin: 5px;
+a:hover {
+    color: #c6a700;
 }
 
-.disaster-utility-group {
-    background-color: #FFF;
-    border-radius: 10px;
-    box-shadow: 3px 3px 7px #B6B6B6;
-    display: flex;
-    flex-flow: column;
-    padding: 10px;
-    margin: 5px;
-}
-
-.list-group {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-}
-
-
-.buttons-group {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-}
-
-.search-form-group {
-    background-color: #FFF;
-    border-radius: 10px;
-    box-shadow: 3px 3px 7px #B6B6B6;
-    margin: 10px;
-    padding: 15px;
-}
-
-.search-form-inputs-group {
-    display: flex;
-    flex-flow: column;
-    margin-bottom: 10px;
-}
-
-.search-form-input-group {
-    align-items: center;
-    background-color: #FFF;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px #B6B6B6;
-    display: flex;
-    flex-flow: column;
+button, input, label {
     margin: 10px;
 }
 
-/* Element default */
+input {
+    background-color: #FFF;
+    border: 0;
+    border-bottom: 2px solid #FFEE58;
+    width: 50%;
+}
+
+/* Elements with Custom CSS Names */
+
+.completed {
+    text-decoration: line-through;
+}
+
+.error {
+    color: #B00020;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    text-align: center;
+}
 
 .main {
     background-color: #FFFF6b;
     border-radius: 10px;
-    box-shadow: 2px 2px 4px #B6B6B6;
+    box-shadow: 3px 3px 7px #B6B6B6;
     padding: 10px;
-}
-
-label, input, button {
-    margin: 10px;
-}
-
-.item-input {
-    width: 80%;
 }
 
 .r-btn, .y-btn {
     border: none;
     background-color: white;
 }
-
-/* .s-btn {
-    background-color: #FFFF6b;
-} */
 
 .r-btn:hover {
     color: #B00020;
@@ -176,28 +112,12 @@ label, input, button {
     text-shadow: 1px 1px 2px #333333;
 }
 
-.error {
-    color: #B00020;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 400;
-    text-align: center;
+.small-button {
+    margin: 0;
 }
 
-.tooltip .tooltiptext {
-    background-color:  #333333;
-    border-radius: 5px;
-    padding: 5px;
-
-    color: #FFF;
-    font-size: 12px;
-    text-align: center;
-    
-    bottom: 60%;
-    /* left: 100%; */
-    position: absolute;
-    z-index: 1;
-
-    visibility: hidden;    
+.small-icon {
+    font-size: 16px;
 }
 
 .white {
@@ -208,18 +128,7 @@ label, input, button {
     padding: 15px;
 }
 
-.search-input-image {
-    height: 320px;
-    width: 85%;
-}
-
-input {
-    width: 50%;
-}
-
-.completed {
-    text-decoration: line-through;
-}
+/* Tooltips */
 
 .input-tooltip {
     display: flex;
@@ -243,12 +152,105 @@ input {
     font-size: 12px;
     text-align: left;
     
-    /* bottom: 60%; */
-    /* left: 50%; */
     position: absolute;
     z-index: 1;
 
     visibility: visible;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .long.tooltiptext {
+    text-align: left;
+    width: 150px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 0.8;
+}
+
+.tooltip .tooltiptext {
+    background-color:  #333333;
+    border-radius: 5px;
+    padding: 5px;
+
+    color: #FFF;
+    font-size: 12px;
+    text-align: center;
+    
+    bottom: 60%;
+    position: absolute;
+    z-index: 1;
+
+    visibility: hidden;    
+}
+
+/* Dashboard Page */
+
+.dashboard-components-group {
+    display: flex;
+    flex-flow: column;
+}
+
+.dashboard-component-group {
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px #B6B6B6;
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+    margin: 5px;
+    line-height: 24px;
+}
+
+.list-item-group {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.list-item-input {
+    width: 80%;
+}
+
+.buttons-group {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+/* Search Form Page */
+
+.search-form-group {
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px #B6B6B6;
+    margin: 10px;
+    padding: 15px;
+}
+
+.search-form-inputs-group {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 10px;
+}
+
+.search-form-input-group {
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px #B6B6B6;
+    display: flex;
+    flex-flow: column;
+    margin: 10px;
+}
+
+.search-input-image {
+    height: 320px;
+    width: 85%;
 }
 
 @media all and (min-width: 800px) {
@@ -277,19 +279,4 @@ input {
         width: 240px;
     }
 
-    /* Tooltip default */
-
-    .tooltip {
-        position: relative;
-    }
-    
-    .tooltip .long.tooltiptext {
-        text-align: left;
-        width: 150px;
-    }
-    
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-        opacity: 0.8;
-    }
 }
