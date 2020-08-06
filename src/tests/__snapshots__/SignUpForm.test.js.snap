@@ -2,13 +2,14 @@
 
 exports[`SignUpForm Component Snapshot test Renders the UI as expected 1`] = `
 <form
+  className="white"
   onSubmit={[Function]}
 >
   
   <label
     htmlFor="user_full_name"
   >
-    Full Name:
+    Enter Full Name:
   </label>
   <input
     id="user_full_name"
@@ -17,21 +18,31 @@ exports[`SignUpForm Component Snapshot test Renders the UI as expected 1`] = `
   <label
     htmlFor="user_name"
   >
-    Username:
+    Enter New Username:
   </label>
   <input
     id="user_name"
+    onChange={[Function]}
     type="text"
   />
-  <label
-    htmlFor="user_password"
+  <div
+    className="input-tooltip"
   >
-    Password:
-  </label>
-  <input
-    id="user_password"
-    type="text"
-  />
+    <label
+      htmlFor="user_password"
+    >
+      Enter New Password:
+    </label>
+    <input
+      id="user_password"
+      type="text"
+    />
+    <span
+      className="input-tooltiptext"
+    >
+      Password must not start nor end with spaces, have more than 8 characters, and contain 1 upper, 1 lower, 1 number, and 1 special character. :)
+    </span>
+  </div>
   <div>
     <button
       className="y-btn"

@@ -25,7 +25,7 @@ exports[`Header Component Snapshot test Renders the UI as expected 1`] = `
           href="/loginpage"
           onClick={[Function]}
         >
-          Log In
+          Login
         </a>
       </li>
       <li>
@@ -34,7 +34,7 @@ exports[`Header Component Snapshot test Renders the UI as expected 1`] = `
           href="/signuppage"
           onClick={[Function]}
         >
-          Sign Up
+          Signup
         </a>
       </li>
     </ul>

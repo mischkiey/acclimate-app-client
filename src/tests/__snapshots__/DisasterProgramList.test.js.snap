@@ -2,6 +2,6 @@
 
 exports[`DisasterProgramList Component Snapshot test Renders the UI as expected 1`] = `
 <section
-  className="dashboard-component-group item"
+  className="dashboard-components-group item"
 />
 `;

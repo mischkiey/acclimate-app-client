@@ -4,6 +4,16 @@ exports[`TaskItem Component Snapshot test Renders the UI as expected 1`] = `
 <div
   className="list-item-group"
 >
+  <button
+    className="y-btn"
+    onClick={[Function]}
+  >
+    <i
+      className="material-icons"
+    >
+      check
+    </i>
+  </button>
   <input
     className="list-item-input"
     defaultValue="Bring pets inside"

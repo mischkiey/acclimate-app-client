@@ -8,7 +8,7 @@ Array [
     Select a Disaster Program
   </h2>,
   <form
-    className=""
+    className="search-form-group"
     onSubmit={[Function]}
   >
     
@@ -16,7 +16,7 @@ Array [
       className="search-form-inputs-group"
     />
     <button
-      className="y-btn"
+      className="y-btn s-btn"
     >
       <i
         className="material-icons"

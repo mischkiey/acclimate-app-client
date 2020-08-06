@@ -2,6 +2,7 @@
 
 exports[`LoginForm Component Snapshot test Renders the UI as expected 1`] = `
 <form
+  className="white"
   onSubmit={[Function]}
 >
   

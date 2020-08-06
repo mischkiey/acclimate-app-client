@@ -1,35 +1,87 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class HelpPage extends Component {
     render() {
         return (
             <div className='white'>
                 <i className="material-icons">help_outline</i>
-                <h2>Description:</h2>
-                <p>
-                    Acclimate is an informational and utility disaster management app that aims to provide accurate, reliable, and useful information and tools to be able to handle impending disasters systematically and effectively
-                </p>
-                
+                <h2>Hello and welcome to Acclimate!</h2>
+                    <p>
+                        Acclimate is an informational and utility disaster management app that aims to provide accurate, reliable, and useful information and tools to be able to handle impending disasters systematically and effectively
+                    </p>
+                <hr/>
+            
                 <h2>How It Works:</h2>
                 <ol>
                     <li>
-                        The app provides users with general information on a selected disaster
+                        The app provides the user with general information on a selected disaster
                     </li>
                     <li>
-                        The app will generate a disaster management plan (based on user-selection) that has steps for before, during, and after the event
+                        The app provides disaster management plans that has steps for before, during, and after the event
                     </li>
                     <li>
-                        The app will also generate a task list that incorporates the above plan
+                        The app provides the user with a highly-customizable task list and shopping list
                     </li>
                     <li>
-                        The app will also generate a shopping list with recommended supplies
-                    </li>
-                    <li>
-                        Users can personalize the task and shopping lists to tailorfit their current circumstances/needs
+                        Users may add steps from the chosen disaster plan to their lists where appropriate at the push of a button
                     </li>
                 </ol>
+                <hr />
 
-                <h2>Credits</h2>
+                <h2>Hints and Tips:</h2>
+                <ul>
+                    <li>
+                        <i className="material-icons">help_outline</i> - Displays help page
+                    </li>
+                    <li>
+                        <i className="material-icons">search</i> - Search database for a disaster management plan
+                    </li>
+                    <li>
+                        <i className="material-icons">dashboard</i> - View your dashboard
+                    </li>
+                    <li>
+                        <i className="material-icons">power_settings_new</i> - Log out securely
+                    </li>
+                    <li>
+                        <i className="material-icons">add_circle</i> - Add item
+                    </li>
+                    <li>
+                        <i className="material-icons">add_task</i> - Add disaster plan step to task list (automatically creates a shorthand version)
+                    </li>
+                    <li>
+                        <i className="material-icons">add_shopping_cart</i> - Add disaster plan step to shopping list (automatically creates a shorthand version)
+                    </li>
+                    <li>
+                        <i className="material-icons">delete</i> - Delete item
+                    </li>
+                </ul>
+
+                <h2>Acknowledgments:</h2>
+                <ul>
+                    <li>
+                        Al Zimmerman - TA
+                    </li>
+                    <li>
+                        Alfredo Salazar - Mentor
+                    </li>
+                    <li>
+                        Joshua Struve - Overall design
+                    </li>
+                </ul>
+
+                <h2>Credits and References</h2>
+                <ul>
+                    <li>
+                        FEMA - https://www.fema.gov/
+                    </li>
+                    <li>
+                        Red Cross - https://www.redcross.org/
+                    </li>
+                    <li>
+                        Unsplash - https://unsplash.com/
+                    </li>
+                </ul>
             </div>
         );
     };

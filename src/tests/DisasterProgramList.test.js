@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
+import { AcclimateProvider } from '../contexts/AcclimateContext';
 import DisasterProgramList from '../components/DisasterProgram/DisasterProgramList';
 
 describe(`DisasterProgramList Component`, () => {
@@ -10,7 +11,9 @@ describe(`DisasterProgramList Component`, () => {
             const div = document.createElement('div');
             ReactDOM.render(
                 <BrowserRouter>    
-                    <DisasterProgramList />
+                    <AcclimateProvider>
+                        <DisasterProgramList />
+                    </AcclimateProvider>
                 </BrowserRouter>
                 , div);
             ReactDOM.unmountComponentAtNode(div);
@@ -21,8 +24,10 @@ describe(`DisasterProgramList Component`, () => {
         it(`Renders the UI as expected`, () => {
             const tree = renderer
                 .create(
-                    <BrowserRouter>
-                        <DisasterProgramList />
+                    <BrowserRouter>    
+                        <AcclimateProvider>
+                            <DisasterProgramList />
+                        </AcclimateProvider>
                     </BrowserRouter>
                 )
                 .toJSON()

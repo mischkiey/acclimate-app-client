@@ -76,6 +76,10 @@ input {
     width: 50%;
 }
 
+li {
+    margin-bottom: 5px;
+}
+
 /* Elements with Custom CSS Names */
 
 .completed {

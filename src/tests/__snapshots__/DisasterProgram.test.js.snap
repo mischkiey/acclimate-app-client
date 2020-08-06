@@ -2,11 +2,33 @@
 
 exports[`DisasterProgram Component Snapshot test Renders the UI as expected 1`] = `
 <div
-  className="disaster-program-group"
+  className="dashboard-component-group"
 >
   <article>
+    <h2
+      className="center"
+    >
+       Disaster Program
+    </h2>
+    <p>
+      About the blizzard disaster program
+    </p>
+  </article>
+  <div
+    className="buttons-group"
+  >
     <button
-      className="item tooltip y-btn"
+      className="item left r-btn"
+      onClick={[Function]}
+    >
+      <i
+        className="material-icons"
+      >
+        delete
+      </i>
+    </button>
+    <button
+      className="item right tooltip y-btn"
       onClick={[Function]}
     >
       <i
@@ -20,25 +42,6 @@ exports[`DisasterProgram Component Snapshot test Renders the UI as expected 1`] 
         More
       </span>
     </button>
-    <button
-      className="item r-btn"
-      onClick={[Function]}
-    >
-      <i
-        className="material-icons"
-      >
-        delete
-      </i>
-    </button>
-    <h2
-      className="center"
-    >
-      Disaster Program
-    </h2>
-    <p>
-      About the blizzard disaster program
-      : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-  </article>
+  </div>
 </div>
 `;
