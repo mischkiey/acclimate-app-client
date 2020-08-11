@@ -72,10 +72,10 @@ class SignUpForm extends Component {
                         <label htmlFor="user_password">Enter New Password:</label>
                         <input
                             id="user_password"
-                            type="text"
+                            type="password"
                         />
                         <span className='input-tooltiptext'>
-                            Password must not start nor end with spaces, have more than 8 characters, and contain 1 upper, 1 lower, 1 number, and 1 special character. :)
+                            Password must not start nor end with spaces, have more than 8 characters, and contain 1 upper, 1 lower, 1 number, and 1 special character.
                         </span>
                     </div>
 

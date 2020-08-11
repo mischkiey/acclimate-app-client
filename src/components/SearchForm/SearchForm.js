@@ -10,13 +10,13 @@ class SearchForm extends Component {
         error: null,
     };
 
-    handleSearchFormSubmit(e) {
+    handleSearchInputSubmit(e) {
         e.preventDefault();
 
         this.setState({error: null});
 
         const token = TokenService.getAuthToken();
-        const disaster_program_id = e.target.disaster.value;
+        const disaster_program_id = e.target.value;
 
         return APIService.post('/user/program', {disaster_program_id}, token)
             .then(() => {
@@ -53,15 +53,14 @@ class SearchForm extends Component {
                     key={disaster.disaster_id}
                 >
                         <input
+                            alt={disaster.disaster_name}
+                            className='search-input-image'
                             id={disaster.disaster_id}
                             name='disaster'
-                            type='radio'
-                            value={disaster.disaster_id}
-                        />
-                        <img
-                            alt={`${disaster.disaster_name}`}
-                            className='search-input-image'
+                            onClick={(e) => this.handleSearchInputSubmit(e)}
                             src={require(`./../../images/${disaster.disaster_image}.jpg`)}
+                            type='image'
+                            value={disaster.disaster_id}
                         />
                         <label htmlFor={disaster.disaster_id}>
                             {disaster.disaster_name}
@@ -74,7 +73,6 @@ class SearchForm extends Component {
                 <h2 className='center'>Select a Disaster Program</h2>
                 <form
                     className='search-form-group'
-                    onSubmit={(e) => this.handleSearchFormSubmit(e)}
                 >
                     {
                         (this.state.error)
@@ -87,9 +85,6 @@ class SearchForm extends Component {
                     <div className='search-form-inputs-group'>
                         {options}
                     </div>
-                    <button className='y-btn s-btn'>
-                        <i className="material-icons">add_circle</i>
-                    </button>
                 </form>
             </>
         )

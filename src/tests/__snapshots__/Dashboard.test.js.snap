@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard Component Snapshot test Renders the UI as expected 1`] = `
+<div
+  className="group"
+>
+  <section
+    className="dashboard-components-group item"
+  />
+  <section
+    className="dashboard-components-group item"
+  >
+    <article
+      className="dashboard-component-group item"
+    >
+      <h2
+        className="center"
+      >
+        Task List
+      </h2>
+      <form
+        className="list-item-group"
+        onSubmit={[Function]}
+      >
+        <input
+          className="list-item-input"
+          name="add_user_task"
+          placeholder="Enter task"
+          type="text"
+        />
+        <button
+          className="tooltip y-btn"
+        >
+          <i
+            className="material-icons"
+          >
+            add_circle
+          </i>
+          <span
+            className="long tooltiptext"
+          >
+            Click to add to your task list
+          </span>
+        </button>
+      </form>
+    </article>
+    <article
+      className="dashboard-component-group item"
+    >
+      <h2
+        className="center"
+      >
+        Shopping List
+      </h2>
+      <form
+        className="list-item-group"
+        onSubmit={[Function]}
+      >
+        <input
+          className="list-item-input"
+          name="add_user_shopping_item"
+          placeholder="Enter shopping item"
+          type="text"
+        />
+        <button
+          className="tooltip y-btn"
+        >
+          <i
+            className="material-icons"
+          >
+            add_circle
+          </i>
+          <span
+            className="long tooltiptext"
+          >
+            Click to add item to your shopping list
+          </span>
+        </button>
+      </form>
+    </article>
+  </section>
+</div>
+`;

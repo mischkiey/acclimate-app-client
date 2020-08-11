@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchForm Component Snapshot test Renders the UI as expected 1`] = `
+exports[`SearchPage Component Snapshot test Renders the UI as expected 1`] = `
 Array [
   <h2
     className="center"
