@@ -12,6 +12,7 @@ function LoginPage(props) {
                         : 'Please login to continue.'
                 }
             </h2>
+            <p className='center'>Demo Credentials: Username: test, Password: test</p>
             <LoginForm {...props} />
         </>
     );
